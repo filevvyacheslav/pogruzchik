@@ -1,0 +1,17 @@
+.start {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.start__label {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-small);
+  color: var(--color-muted);
+}
+
+.start__text {
+  max-width: 52ch;
+  margin-top: var(--space-5);
+  color: var(--color-muted);
+}
