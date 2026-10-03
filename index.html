@@ -21,6 +21,8 @@
     <script src="assets/js/popular.js?v=1" defer></script>
     <link rel="stylesheet" href="assets/css/blocks/application.css?v=1">
     <script src="assets/js/application.js?v=1" defer></script>
+    <link rel="stylesheet" href="assets/css/blocks/reviews.css?v=1">
+    <script src="assets/js/reviews.js?v=1" defer></script>
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=3" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
@@ -378,6 +380,25 @@
             <p class="application__status p2" role="status" hidden></p>
           </form>
         </div>
+      </section>
+      <section class="section reviews container" id="reviews" aria-labelledby="reviews-title" aria-roledescription="карусель">
+        <div class="reviews__heading"><h2 id="reviews-title">Клиенты <br class="reviews__title-break">о нашей технике</h2></div>
+        <div class="reviews__navigation" aria-label="Листать отзывы">
+          <button class="reviews__arrow reviews__arrow--prev" type="button" aria-label="Предыдущий отзыв"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m12 5-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="reviews__arrow reviews__arrow--next" type="button" aria-label="Следующий отзыв"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m8 5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="reviews__slide" role="group" aria-roledescription="слайд" aria-label="Отзыв 1 из 4">
+          <img class="reviews__image" src="assets/images/review-forklift.png" alt="Погрузчик на складе, фото к отзыву Вадима" width="516" height="600" loading="lazy" decoding="async">
+          <article class="reviews__card" aria-labelledby="review-author">
+            <div class="reviews__meta">
+              <div class="reviews__author-block"><h3 id="review-author">Вадим</h3><time class="reviews__date p2" datetime="2026-09-28">28.09.26</time></div>
+              <div class="reviews__rating" aria-label="Оценка: 5 из 5"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/star.svg#review-star"></use></svg><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/star.svg#review-star"></use></svg><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/star.svg#review-star"></use></svg><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/star.svg#review-star"></use></svg><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/star.svg#review-star"></use></svg></div>
+            </div>
+            <svg class="reviews__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+            <blockquote class="reviews__text p1">Взяли попробовать подъёмник на стройку, до этого пользовались строительными лесами. Очень удобен в работе. Экономит время рабочих, так как не нужно заниматься монтажем и демонтажем. Нравится, что подъёмник без каких либо проблем можно передвигать с одной точки в другую. Для работ по внешней отделке помещений - отличный вариант!</blockquote>
+          </article>
+        </div>
+        <p class="reviews__status visually-hidden" role="status" aria-live="polite"></p>
       </section>
     </main>
   </body>
