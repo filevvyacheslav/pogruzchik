@@ -5,12 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Стартовая страница для разработки лендинга по макету.">
     <meta name="color-scheme" content="light">
-    <title>Лендинг — разработка</title>
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/blocks/start.css">
+    <title>Погрузчик — аренда техники</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/base.css?v=2">
+    <link rel="stylesheet" href="assets/css/blocks/header.css?v=3">
+    <link rel="stylesheet" href="assets/css/blocks/start.css?v=2">
+    <script src="assets/js/header.js?v=2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <div class="header-placeholder">
+      <header class="site-header" id="site-header">
+        <div class="site-header__top">
+          <div class="site-header__contacts container">
+            <a class="site-header__logo" href="./" aria-label="Погрузчик — главная">
+              <img src="assets/images/logo.svg" alt="Погрузчик" width="149" height="36">
+            </a>
+            <a class="site-header__email p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a>
+            <p class="site-header__address p2">г. Москва, ул. Карла-Маркса, 35</p>
+            <a class="site-header__phone h3Aa" href="tel:+78006181647">+7 (800) 618-16-47</a>
+            <!-- Ссылки на профили подключим после получения адресов. -->
+            <div class="header-socials header-socials--top" aria-label="Мессенджеры">
+              <span class="header-socials__item" title="WhatsApp — ссылка уточняется"><img src="assets/images/whats.svg" alt="WhatsApp" width="36" height="36"></span>
+              <span class="header-socials__item" title="Telegram — ссылка уточняется"><img src="assets/images/teleg.svg" alt="Telegram" width="36" height="36"></span>
+              <span class="header-socials__item" title="MAX — ссылка уточняется"><img src="assets/images/max.svg" alt="MAX" width="36" height="36"></span>
+            </div>
+          </div>
+        </div>
+        <nav class="site-header__nav" aria-label="Основная навигация">
+          <div class="site-header__nav-inner">
+            <a class="site-header__link site-header__catalog btn2" href="#catalog"><img src="assets/images/icon-catalog.svg" alt="" width="20" height="20">Каталог</a>
+            <a class="site-header__link site-header__desktop-link btn2" href="#top-positions">Топ позиции</a>
+            <a class="site-header__link site-header__desktop-link btn2" href="#reviews">Отзывы</a>
+            <a class="site-header__link site-header__desktop-link btn2" href="#documents">Документы</a>
+            <a class="site-header__link site-header__desktop-link btn2" href="#contacts">Контакты</a>
+            <a class="site-header__link site-header__callback site-header__desktop-link btn2" href="tel:+78006181647">Обратный звонок</a>
+            <button class="site-header__link site-header__menu-toggle btn2" type="button" aria-expanded="false" aria-controls="header-mobile-menu">Меню</button>
+            <div class="header-socials header-socials--bottom" aria-label="Мессенджеры">
+              <span class="header-socials__item" title="WhatsApp — ссылка уточняется"><img src="assets/images/whats.svg" alt="WhatsApp" width="36" height="36"></span>
+              <span class="header-socials__item" title="Telegram — ссылка уточняется"><img src="assets/images/teleg.svg" alt="Telegram" width="36" height="36"></span>
+              <span class="header-socials__item" title="MAX — ссылка уточняется"><img src="assets/images/max.svg" alt="MAX" width="36" height="36"></span>
+            </div>
+          </div>
+          <div class="site-header__mobile-menu" id="header-mobile-menu" hidden>
+            <a class="site-header__mobile-link btn2" href="#top-positions">Топ позиции</a>
+            <a class="site-header__mobile-link btn2" href="#reviews">Отзывы</a>
+            <a class="site-header__mobile-link btn2" href="#documents">Документы</a>
+            <a class="site-header__mobile-link btn2" href="#contacts">Контакты</a>
+            <a class="site-header__mobile-link btn2" href="tel:+78006181647">Обратный звонок</a>
+            <a class="site-header__mobile-link p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a>
+          </div>
+        </nav>
+      </header>
+    </div>
     <main id="main">
       <!-- Временный блок: заменим первым блоком из референса. -->
       <section class="start section" aria-labelledby="start-title">
