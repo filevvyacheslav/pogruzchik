@@ -1,0 +1,28 @@
+.documents { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px 24px; margin-bottom: var(--section-space); }
+.documents__heading { grid-column: 1; grid-row: 1; margin: 0; }
+.documents__navigation { grid-column: 2; grid-row: 1; display: flex; gap: 8px; }
+.documents__arrow { display: flex; align-items: center; justify-content: center; width: 60px; min-height: 44px; padding: 0; border: 1px solid var(--color-muted); border-radius: 6px; color: var(--color-text); background: transparent; transition: border-color 150ms ease, color 150ms ease; }
+.documents__arrow svg { width: 20px; height: 20px; }
+.documents__arrow:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.documents__grid { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.documents__item { display: block; min-width: 0; border-radius: 6px; }
+.documents__item[hidden] { display: none; }
+.documents__item img { width: 100%; aspect-ratio: 310 / 443; object-fit: contain; border-radius: 6px; }
+.documents__request { grid-column: 1 / -1; grid-row: 3; display: flex; align-items: center; gap: 48px; }
+.documents__cta { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; height: 90px; padding-inline: 48px; border-radius: 6px; color: var(--color-white); background: var(--color-accent); text-decoration: none; transition: background-color 150ms ease; }
+.documents__cta:hover { background: var(--color-accent-dark); }
+.documents__caption { max-width: 320px; }
+@media (max-width: 1024px) {
+  .documents { row-gap: 24px; }
+  .documents__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .documents__cta { height: 60px; padding-inline: 32px; }
+}
+@media (max-width: 767px) {
+  .documents { grid-template-columns: minmax(0, 1fr); }
+  .documents__heading { grid-column: 1; }
+  .documents__grid { grid-template-columns: minmax(0, 1fr); }
+  .documents__navigation { grid-column: 1; grid-row: 3; }
+  .documents__arrow { flex: 1; width: auto; height: 44px; }
+  .documents__request { grid-row: 4; flex-direction: column; align-items: stretch; gap: 16px; }
+  .documents__cta { width: 100%; padding-inline: 24px; }
+}
