@@ -72,7 +72,7 @@
 .site-header__link:hover,
 .site-header__mobile-link:hover { color: var(--color-accent); background: var(--color-background); }
 .site-header__link:focus-visible { outline-offset: -4px; }
-.site-header__catalog { gap: 10px; }
+.site-header__catalog { gap: 10px; text-align: center; }
 .site-header__catalog svg { flex-shrink: 0; width: 20px; height: 20px; }
 .site-header__callback { flex: 0 0 auto; padding-inline: 64px; }
 .site-header__menu-toggle { display: none; }
