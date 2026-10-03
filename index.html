@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Стартовая страница для разработки лендинга по макету.">
+    <meta name="description" content="Аренда погрузчиков в Москве. Погрузчики, штабелеры, рохли и ричтраки для погрузки, перемещения и размещения грузов.">
     <meta name="color-scheme" content="light">
     <title>Погрузчик — аренда техники</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/base.css?v=2">
     <link rel="stylesheet" href="assets/css/blocks/header.css?v=6">
-    <link rel="stylesheet" href="assets/css/blocks/start.css?v=2">
+    <link rel="preload" as="image" href="assets/images/hero1pogr-converted.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/hero1-bg-converted.webp" fetchpriority="high">
+    <link rel="stylesheet" href="assets/css/blocks/hero.css?v=2">
     <script src="assets/js/header.js?v=2" defer></script>
+    <script src="assets/js/hero.js?v=2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -63,12 +66,35 @@
       </header>
     </div>
     <main id="main">
-      <!-- Временный блок: заменим первым блоком из референса. -->
-      <section class="start section" aria-labelledby="start-title">
-        <div class="container">
-          <p class="start__label">Разработка лендинга</p>
-          <h1 id="start-title">Основа сайта готова</h1>
-          <p class="start__text">Здесь появится первый блок по вашему макету.</p>
+      <section class="hero" aria-labelledby="hero-title" aria-roledescription="карусель">
+        <img class="hero__background" src="assets/images/hero1-bg-converted.webp" alt="" width="3168" height="1344" fetchpriority="high" loading="eager" decoding="async">
+        <div class="hero__stage">
+          <img class="hero__image" src="assets/images/hero1pogr-converted.webp" alt="" width="2897" height="927" fetchpriority="high" loading="eager" decoding="async">
+          <div class="hero__content container">
+            <div class="hero__top">
+              <div class="hero__copy">
+                <div class="hero__text">
+                  <h1 id="hero-title">Аренда погрузчиков в Москве</h1>
+                  <p class="hero__description p1">Погрузчики, штабелеры, рохли и ричтраки
+для погрузки, перемещения и размещения грузов.</p>
+                </div>
+                <a class="hero__cta btn1" href="#catalog"><span>Подобрать оборудование</span></a>
+              </div>
+              <div class="hero__stats" aria-label="Характеристики техники">
+                <div class="hero__stat"><p class="hero__value"><span class="hero__number">150+</span><span class="hero__slashes" aria-hidden="true">//</span></p><p class="hero__stat-label p1">Техники в каталоге</p></div>
+                <div class="hero__stat"><p class="hero__value"><span class="hero__number">5т</span><span class="hero__slashes" aria-hidden="true">//</span></p><p class="hero__stat-label p1">Грузоподъемность</p></div>
+                <div class="hero__stat"><p class="hero__value"><span class="hero__number">6м</span><span class="hero__slashes" aria-hidden="true">//</span></p><p class="hero__stat-label p1">Рабочая высота</p></div>
+              </div>
+            </div>
+            <div class="hero__nav" aria-label="Управление слайдером">
+              <span class="hero__line" aria-hidden="true"></span>
+              <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Предыдущий слайд"><img src="assets/images/arrow-nav.svg" alt="" width="16" height="16"></button>
+              <p class="hero__counter" aria-hidden="true"><span class="hero__current">01</span><span class="hero__total">/04</span></p>
+              <button class="hero__arrow hero__arrow--next" type="button" aria-label="Следующий слайд"><img src="assets/images/arrow-nav.svg" alt="" width="16" height="16"></button>
+              <span class="hero__progress" aria-hidden="true"><span class="hero__progress-fill"></span></span>
+              <p class="hero__status visually-hidden" role="status" aria-live="polite">Слайд 1 из 4</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
