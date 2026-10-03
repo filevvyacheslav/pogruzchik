@@ -1,4 +1,4 @@
-.popular { display: grid; gap: 32px; margin-bottom: var(--section-space); }
+.popular { display: grid; gap: 32px;  }
 .popular__heading { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
 .popular__heading .section__heading { margin: 0; }
 .popular__navigation { display: flex; gap: 8px; flex-shrink: 0; }

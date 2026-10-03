@@ -83,6 +83,9 @@ h1, h2, h4, .h1, .h2, .h3AA, .h4 { text-transform: uppercase; }
   line-height: 1.2;
 }
 
+.btn1 > span, .btn2 > span, .btn3 > span { display: block; }
+button, .btn1, .btn2, .btn3, button > span, .btn1 > span, .btn2 > span, .btn3 > span { text-box: trim-both cap alphabetic; }
+
 .btn1 { font-size: var(--text-btn1); text-transform: uppercase; }
 .btn2 { font-size: var(--text-btn2); text-transform: uppercase; }
 .btn3 { font-size: var(--text-btn3); font-weight: 600; }

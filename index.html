@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/base.css?v=3">
+    <link rel="stylesheet" href="assets/css/base.css?v=4">
     <link rel="stylesheet" href="assets/css/blocks/header.css?v=6">
     <link rel="preload" as="image" href="assets/images/hero1pogr-converted.webp" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/hero1-bg-converted.webp" fetchpriority="high">
@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/blocks/services.css?v=1">
     <link rel="stylesheet" href="assets/css/blocks/popular.css?v=1">
     <script src="assets/js/popular.js?v=1" defer></script>
+    <link rel="stylesheet" href="assets/css/blocks/application.css?v=1">
+    <script src="assets/js/application.js?v=1" defer></script>
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=3" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
@@ -255,17 +257,17 @@
           </div>
         </div>
         <div class="popular__tabs" role="tablist" aria-label="Категории популярной техники">
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-diesel" aria-controls="popular-products" aria-selected="true" tabindex="0" data-category="diesel">Дизельные погрузчики</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-electric" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="electric">Электропогрузчики</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-gas" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="gas">Газбензиновые погрузчики</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-stackers" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="stackers">Штабелеры</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-reach" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="reach">Ричтраки</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-pallet" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="pallet">Складские электротележки</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-tables" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="tables">Подъемные столы</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-filters" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="filters">Фильтры</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-parts" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="parts">Запчасти</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-tires" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="tires">Шины</button>
-          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-used" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="used">Б/у погрузчики</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-diesel" aria-controls="popular-products" aria-selected="true" tabindex="0" data-category="diesel"><span>Дизельные погрузчики</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-electric" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="electric"><span>Электропогрузчики</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-gas" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="gas"><span>Газбензиновые погрузчики</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-stackers" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="stackers"><span>Штабелеры</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-reach" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="reach"><span>Ричтраки</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-pallet" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="pallet"><span>Складские электротележки</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-tables" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="tables"><span>Подъемные столы</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-filters" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="filters"><span>Фильтры</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-parts" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="parts"><span>Запчасти</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-tires" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="tires"><span>Шины</span></button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-used" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="used"><span>Б/у погрузчики</span></button>
         </div>
         <div class="popular__panel" id="popular-products" role="tabpanel" aria-labelledby="popular-tab-diesel">
           <div class="popular__grid">
@@ -280,7 +282,7 @@
                 </dl>
                 <div class="product-card__offer">
                   <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
-                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                  <button class="product-card__button btn2" type="button"><span>Оставить заявку</span></button>
                 </div>
               </div>
             </article>
@@ -295,7 +297,7 @@
                 </dl>
                 <div class="product-card__offer">
                   <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
-                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                  <button class="product-card__button btn2" type="button"><span>Оставить заявку</span></button>
                 </div>
               </div>
             </article>
@@ -310,7 +312,7 @@
                 </dl>
                 <div class="product-card__offer">
                   <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
-                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                  <button class="product-card__button btn2" type="button"><span>Оставить заявку</span></button>
                 </div>
               </div>
             </article>
@@ -325,7 +327,7 @@
                 </dl>
                 <div class="product-card__offer">
                   <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
-                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                  <button class="product-card__button btn2" type="button"><span>Оставить заявку</span></button>
                 </div>
               </div>
             </article>
@@ -333,6 +335,49 @@
           <p class="popular__empty p1" hidden>Товары этой категории скоро появятся.</p>
         </div>
         <p class="popular__status visually-hidden" role="status" aria-live="polite"></p>
+      </section>
+      <section class="section application container" id="application" aria-labelledby="application-title">
+        <div class="application__card">
+          <div class="application__intro">
+            <div class="application__heading">
+              <h2 id="application-title">Оформить заявку</h2>
+              <p class="p2">Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
+            </div>
+            <div class="application__contacts">
+              <div class="application__contact-links">
+                <a class="application__phone h3Aa" href="tel:+78006181647">+7 (800) 618-16-47</a>
+                <a class="application__email p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a>
+              </div>
+              <div class="header-socials" aria-label="Мессенджеры">
+                <span class="header-socials__item" title="WhatsApp — ссылка уточняется"><img src="assets/images/whats.svg" alt="WhatsApp" width="36" height="36" loading="lazy"></span>
+                <span class="header-socials__item" title="Telegram — ссылка уточняется"><img src="assets/images/teleg.svg" alt="Telegram" width="36" height="36" loading="lazy"></span>
+                <span class="header-socials__item" title="MAX — ссылка уточняется"><img src="assets/images/max.svg" alt="MAX" width="36" height="36" loading="lazy"></span>
+              </div>
+            </div>
+          </div>
+          <form class="application__form" aria-labelledby="application-title">
+            <div class="application__fields">
+              <label class="application__field"><span class="visually-hidden">Ваше имя</span><input class="application__input p1" name="name" autocomplete="name" placeholder="Ваше имя" required><span class="application__required p1" aria-hidden="true">*</span></label>
+              <label class="application__field"><span class="visually-hidden">Телефон</span><input class="application__input p1" name="phone" type="tel" autocomplete="tel" placeholder="Телефон" required><span class="application__required p1" aria-hidden="true">*</span></label>
+              <label class="application__field"><span class="visually-hidden">Email</span><input class="application__input p1" name="email" type="email" autocomplete="email" placeholder="Email"></label>
+            </div>
+            <div class="application__attachment-row">
+              <input class="visually-hidden application__file-input" id="application-file" name="attachment" type="file" tabindex="-1">
+              <button class="application__attach btn3" type="button"><span>Прикрепить файл</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><use href="assets/images/attachment.svg#attachment"></use></svg></button>
+              <div class="application__file" hidden>
+                <button class="application__remove" type="button" aria-label="Удалить прикрепленный файл"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m5 5 10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+                <span class="application__filename p2"></span>
+              </div>
+            </div>
+            <label class="application__message-label"><span class="visually-hidden">Комментарий к заявке</span><textarea class="application__message p1" name="message" placeholder="Например, список необходимых работ или информация о поломке; код запчасти, а так же любой вопрос"></textarea></label>
+            <div class="application__consent">
+              <div class="application__checkbox-wrap"><input class="application__checkbox" id="application-consent" name="consent" type="checkbox" aria-labelledby="application-consent-text" required><svg class="application__check" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><use href="assets/images/check.svg#check"></use></svg></div>
+              <p class="p2" id="application-consent-text"><label for="application-consent">Я даю согласие на </label><a href="#personal-data-consent">обработку персональных данных</a><label for="application-consent"> и подтверждаю, что ознакомлен с </label><a href="#privacy-policy">Политикой в отношении обработки персональных данных</a></p>
+            </div>
+            <button class="application__submit btn2" type="submit"><span>Получить КП</span></button>
+            <p class="application__status p2" role="status" hidden></p>
+          </form>
+        </div>
       </section>
     </main>
   </body>
