@@ -1,0 +1,9 @@
+.videos__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.videos__item { display: flex; align-items: center; justify-content: center; height: 360px; border-radius: 6px; background: #303030; }
+.videos__item[hidden] { display: none; }
+.videos__play { display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; padding: 0; border: 0; border-radius: 6px; color: var(--color-white); background: var(--color-accent); }
+.videos__play svg { width: 24px; height: 24px; }
+.videos__play:hover { background: var(--color-accent-dark); }
+@media (max-width: 767px) {
+  .videos__grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -25,6 +25,10 @@
     <script src="assets/js/reviews.js?v=1" defer></script>
     <link rel="stylesheet" href="assets/css/blocks/documents.css?v=1">
     <script src="assets/js/documents.js?v=1" defer></script>
+    <link rel="stylesheet" href="assets/css/blocks/media-showcase.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/videos.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/brands.css?v=1">
+    <script src="assets/js/media-showcase.js?v=1" defer></script>
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=3" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
@@ -431,6 +435,40 @@
         </div>
         <p class="documents__status visually-hidden" role="status" aria-live="polite"></p>
       </section>
+      <div class="section media-showcase container">
+        <section class="media-showcase__panel videos" id="videos" aria-labelledby="videos-title">
+          <h2 id="videos-title">Видео</h2>
+          <div class="media-showcase__controls"><a class="media-showcase__all btn2" href=""><span>Смотреть все</span></a><div class="media-showcase__navigation" aria-label="Листать видео"><button class="media-showcase__arrow media-showcase__arrow--prev" type="button" aria-label="Предыдущие видео"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m12 5-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="media-showcase__arrow media-showcase__arrow--next" type="button" aria-label="Следующие видео"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m8 5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
+          <div class="videos__grid">
+            <div class="videos__item" data-item="1" aria-label="Видео 1, материал пока не добавлен">
+              <button class="videos__play" type="button" aria-label="Воспроизвести видео 1"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/play-glyph.svg#play-glyph"></use></svg></button>
+            </div>
+            <div class="videos__item" data-item="2" aria-label="Видео 2, материал пока не добавлен">
+              <button class="videos__play" type="button" aria-label="Воспроизвести видео 2"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/play-glyph.svg#play-glyph"></use></svg></button>
+            </div>
+            <div class="videos__item" data-item="3" aria-label="Видео 3, материал пока не добавлен">
+              <button class="videos__play" type="button" aria-label="Воспроизвести видео 3"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/play-glyph.svg#play-glyph"></use></svg></button>
+            </div>
+            <div class="videos__item" data-item="4" aria-label="Видео 4, материал пока не добавлен">
+              <button class="videos__play" type="button" aria-label="Воспроизвести видео 4"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/images/play-glyph.svg#play-glyph"></use></svg></button>
+            </div>
+          </div>
+          <p class="media-showcase__status visually-hidden" role="status" aria-live="polite"></p>
+        </section>
+        <section class="media-showcase__panel brands" id="brands" aria-labelledby="brands-title">
+          <h2 id="brands-title">Бренды</h2>
+          <div class="media-showcase__controls"><a class="media-showcase__all btn2" href=""><span>Смотреть все</span></a><div class="media-showcase__navigation" aria-label="Листать бренды"><button class="media-showcase__arrow media-showcase__arrow--prev" type="button" aria-label="Предыдущие бренды"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m12 5-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="media-showcase__arrow media-showcase__arrow--next" type="button" aria-label="Следующие бренды"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m8 5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
+          <div class="brands__grid">
+<div class="brands__item" data-item="1" aria-label="CHL"><img src="assets/images/brand-chl.png" alt="CHL" width="120" height="64" loading="lazy" decoding="async"></div>
+<div class="brands__item" data-item="2" aria-label="HANGCHA"><img src="assets/images/brand-hangcha.png" alt="HANGCHA" width="120" height="64" loading="lazy" decoding="async"></div>
+<div class="brands__item" data-item="3" aria-label="DOOSAN"><img src="assets/images/brand-doosan.png" alt="DOOSAN" width="120" height="64" loading="lazy" decoding="async"></div>
+<div class="brands__item" data-item="4" aria-label="HYUNDAI FORKLIFT"><img src="assets/images/brand-hyundai.png" alt="HYUNDAI FORKLIFT" width="120" height="64" loading="lazy" decoding="async"></div>
+<div class="brands__item" data-item="5" aria-label="TYRE ADVANCE"><img src="assets/images/brand-tyre-advance.png" alt="TYRE ADVANCE" width="120" height="64" loading="lazy" decoding="async"></div>
+<div class="brands__item" data-item="6" aria-label="ANJ TYRES"><img src="assets/images/brand-anj-tyres.png" alt="ANJ TYRES" width="120" height="64" loading="lazy" decoding="async"></div>
+          </div>
+          <p class="media-showcase__status visually-hidden" role="status" aria-live="polite"></p>
+        </section>
+      </div>
     </main>
   </body>
 </html>
