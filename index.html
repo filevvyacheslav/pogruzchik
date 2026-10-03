@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/blocks/equipment-form.css?v=2">
     <link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=1">
     <link rel="stylesheet" href="assets/css/blocks/services.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/popular.css?v=1">
+    <script src="assets/js/popular.js?v=1" defer></script>
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=3" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
@@ -240,6 +242,97 @@
               </div>
             </article>
         </div>
+      </section>
+      <section class="section popular container" id="top-positions" aria-labelledby="popular-title">
+        <div class="popular__heading">
+          <div class="section__heading">
+            <h2 id="popular-title">Популярная техника</h2>
+            <p class="p1">Техника, которую чаще всего выбирают для складских и погрузочных работ.</p>
+          </div>
+          <div class="popular__navigation" aria-label="Листать популярную технику">
+            <button class="popular__arrow popular__arrow--prev" type="button" aria-label="Предыдущие товары"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m12 5-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="popular__arrow popular__arrow--next" type="button" aria-label="Следующие товары"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m8 5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+        <div class="popular__tabs" role="tablist" aria-label="Категории популярной техники">
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-diesel" aria-controls="popular-products" aria-selected="true" tabindex="0" data-category="diesel">Дизельные погрузчики</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-electric" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="electric">Электропогрузчики</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-gas" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="gas">Газбензиновые погрузчики</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-stackers" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="stackers">Штабелеры</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-reach" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="reach">Ричтраки</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-pallet" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="pallet">Складские электротележки</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-tables" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="tables">Подъемные столы</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-filters" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="filters">Фильтры</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-parts" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="parts">Запчасти</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-tires" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="tires">Шины</button>
+          <button class="popular__tab btn3" type="button" role="tab" id="popular-tab-used" aria-controls="popular-products" aria-selected="false" tabindex="-1" data-category="used">Б/у погрузчики</button>
+        </div>
+        <div class="popular__panel" id="popular-products" role="tabpanel" aria-labelledby="popular-tab-diesel">
+          <div class="popular__grid">
+            <article class="product-card" data-product="1" data-category="diesel">
+              <img class="product-card__image" src="assets/images/popular-forklift-1.png" alt="Вилочный погрузчик Komatsu FB15-12, фото 1" width="930" height="570" loading="lazy" decoding="async">
+              <h3 class="product-card__title">Вилочный погрузчик Komatsu FB15-12</h3>
+              <svg class="product-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/lines2.svg#product-line"></use></svg>
+              <div class="product-card__details">
+                <dl class="product-card__specs p2">
+                  <div><dt>Высота подъема:</dt><dd>6 000 см</dd></div>
+                  <div><dt>Грузоподъемность:</dt><dd>1 500 кг</dd></div>
+                </dl>
+                <div class="product-card__offer">
+                  <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
+                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-product="2" data-category="diesel">
+              <img class="product-card__image" data-src="assets/images/popular-forklift-2.png" alt="Вилочный погрузчик Komatsu FB15-12, фото 2" width="930" height="570" loading="lazy" decoding="async">
+              <h3 class="product-card__title">Вилочный погрузчик Komatsu FB15-12</h3>
+              <svg class="product-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/lines2.svg#product-line"></use></svg>
+              <div class="product-card__details">
+                <dl class="product-card__specs p2">
+                  <div><dt>Высота подъема:</dt><dd>6 000 см</dd></div>
+                  <div><dt>Грузоподъемность:</dt><dd>1 500 кг</dd></div>
+                </dl>
+                <div class="product-card__offer">
+                  <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
+                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-product="3" data-category="diesel">
+              <img class="product-card__image" data-src="assets/images/popular-forklift-3.png" alt="Вилочный погрузчик Komatsu FB15-12, фото 3" width="930" height="570" loading="lazy" decoding="async">
+              <h3 class="product-card__title">Вилочный погрузчик Komatsu FB15-12</h3>
+              <svg class="product-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/lines2.svg#product-line"></use></svg>
+              <div class="product-card__details">
+                <dl class="product-card__specs p2">
+                  <div><dt>Высота подъема:</dt><dd>6 000 см</dd></div>
+                  <div><dt>Грузоподъемность:</dt><dd>1 500 кг</dd></div>
+                </dl>
+                <div class="product-card__offer">
+                  <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
+                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-product="4" data-category="diesel">
+              <img class="product-card__image" data-src="assets/images/popular-forklift-4.png" alt="Вилочный погрузчик Komatsu FB15-12, фото 4" width="930" height="570" loading="lazy" decoding="async">
+              <h3 class="product-card__title">Вилочный погрузчик Komatsu FB15-12</h3>
+              <svg class="product-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/lines2.svg#product-line"></use></svg>
+              <div class="product-card__details">
+                <dl class="product-card__specs p2">
+                  <div><dt>Высота подъема:</dt><dd>6 000 см</dd></div>
+                  <div><dt>Грузоподъемность:</dt><dd>1 500 кг</dd></div>
+                </dl>
+                <div class="product-card__offer">
+                  <p class="product-card__price h3Aa">от 1,300 руб. / сутки</p>
+                  <button class="product-card__button btn2" type="button">Оставить заявку</button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="popular__empty p1" hidden>Товары этой категории скоро появятся.</p>
+        </div>
+        <p class="popular__status visually-hidden" role="status" aria-live="polite"></p>
       </section>
     </main>
   </body>

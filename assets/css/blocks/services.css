@@ -1,4 +1,3 @@
-.services { margin-bottom: var(--section-space); }
 .services__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
 .service-card__body { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 40px 32px; }
 .service-card__icon { position: relative; flex: 0 0 auto; width: 80px; height: 80px; }
