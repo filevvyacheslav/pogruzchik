@@ -3,20 +3,13 @@
   const hero = document.querySelector('.hero');
   if (!hero) return;
   const photo = hero.querySelector('.hero__image');
-  const heading = hero.querySelector('h1');
-  const description = hero.querySelector('.hero__description');
-  const cta = hero.querySelector('.hero__cta');
   const stats = [...hero.querySelectorAll('.hero__stat')];
   const current = hero.querySelector('.hero__current');
   const status = hero.querySelector('.hero__status');
   const progress = hero.querySelector('.hero__progress-fill');
   const duration = 10000;
-  // Каждый объект содержит весь контент слайда, включая фото и показатели.
+  // Слайды меняют только фото и показатели. Левый блок остаётся неподвижным.
   const slides = Array.from({ length: 4 }, () => ({
-    title: 'Аренда погрузчиков в Москве',
-    description: 'Погрузчики, штабелеры, рохли и ричтраки\nдля погрузки, перемещения и размещения грузов.',
-    button: 'Подобрать оборудование',
-    href: '#catalog',
     image: 'assets/images/hero1pogr-converted.webp',
     stats: [
       { value: '150+', label: 'Техники в каталоге' },
@@ -64,10 +57,6 @@
     await loadImage(slide.image);
     if (request !== pending) return;
     index = next;
-    heading.textContent = slide.title;
-    description.textContent = slide.description;
-    cta.querySelector('span').textContent = slide.button;
-    cta.setAttribute('href', slide.href);
     photo.src = slide.image;
     stats.forEach((stat, position) => {
       stat.querySelector('.hero__number').textContent = slide.stats[position].value;

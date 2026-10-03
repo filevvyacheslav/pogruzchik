@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="assets/css/blocks/header.css?v=6">
     <link rel="preload" as="image" href="assets/images/hero1pogr-converted.webp" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/hero1-bg-converted.webp" fetchpriority="high">
-    <link rel="stylesheet" href="assets/css/blocks/hero.css?v=2">
+    <link rel="stylesheet" href="assets/css/blocks/hero.css?v=3">
+    <link rel="stylesheet" href="assets/css/blocks/equipment-form.css?v=1">
     <script src="assets/js/header.js?v=2" defer></script>
-    <script src="assets/js/hero.js?v=2" defer></script>
+    <script src="assets/js/hero.js?v=3" defer></script>
+    <script src="assets/js/equipment-form.js?v=1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -78,7 +80,7 @@
                   <p class="hero__description p1">Погрузчики, штабелеры, рохли и ричтраки
 для погрузки, перемещения и размещения грузов.</p>
                 </div>
-                <a class="hero__cta btn1" href="#catalog"><span>Подобрать оборудование</span></a>
+                <a class="hero__cta btn1" href="#equipment-selection"><span>Подобрать оборудование</span></a>
               </div>
               <div class="hero__stats" aria-label="Характеристики техники">
                 <div class="hero__stat"><p class="hero__value"><span class="hero__number">150+</span><span class="hero__slashes" aria-hidden="true">//</span></p><p class="hero__stat-label p1">Техники в каталоге</p></div>
@@ -96,6 +98,48 @@
             </div>
           </div>
         </div>
+      </section>
+      <svg class="section-divider" viewBox="0 0 1440 20" aria-hidden="true" focusable="false"><use href="assets/images/line.svg#separator"></use></svg>
+      <section class="equipment-selection container" id="equipment-selection" aria-labelledby="equipment-title">
+        <form class="equipment-form" aria-labelledby="equipment-title">
+          <div class="equipment-form__heading">
+            <h2 class="equipment-form__title" id="equipment-title">Подобрать технику</h2>
+            <div class="equipment-form__icons" aria-hidden="true">
+              <svg class="equipment-form__icon" data-category="forklifts" viewBox="0 0 55 55" focusable="false"><use href="assets/images/equipment-icons.svg#forklifts"></use></svg>
+              <svg class="equipment-form__icon" data-category="stackers" viewBox="0 0 55 55" focusable="false"><use href="assets/images/equipment-icons.svg#stackers"></use></svg>
+              <svg class="equipment-form__icon" data-category="pallet-trucks" viewBox="0 0 55 55" focusable="false"><use href="assets/images/equipment-icons.svg#pallet-trucks"></use></svg>
+              <svg class="equipment-form__icon" data-category="reach-trucks" viewBox="0 0 55 55" focusable="false"><use href="assets/images/equipment-icons.svg#reach-trucks"></use></svg>
+            </div>
+          </div>
+          <div class="equipment-form__fields">
+            <label class="equipment-form__field">
+              <span class="visually-hidden">Категория</span>
+              <select class="equipment-form__select p1" name="category">
+                <option value="">Категория</option>
+                <option value="forklifts">Погрузчики</option><option value="stackers">Штабелеры</option><option value="pallet-trucks">Рохли</option><option value="reach-trucks">Ричтраки</option>
+              </select>
+              <svg class="equipment-form__arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><use href="assets/images/arrow-form.svg#arrow-form"></use></svg>
+            </label>
+            <label class="equipment-form__field">
+              <span class="visually-hidden">Грузоподъемность</span>
+              <select class="equipment-form__select p1" name="capacity" disabled>
+                <option value="">Грузоподъемность</option><option value="500">500кг</option><option value="1000">1т</option><option value="2000">2т</option><option value="5000">5т</option><option value="10000">10т</option>
+              </select>
+              <svg class="equipment-form__arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><use href="assets/images/arrow-form.svg#arrow-form"></use></svg>
+            </label>
+            <label class="equipment-form__field">
+              <span class="visually-hidden">Бренд</span>
+              <select class="equipment-form__select p1" name="brand" disabled>
+                <option value="">Бренд</option><option value="brand-1">Бренд 1</option><option value="brand-2">Бренд 2</option><option value="brand-3">Бренд 3</option>
+              </select>
+              <svg class="equipment-form__arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><use href="assets/images/arrow-form.svg#arrow-form"></use></svg>
+            </label>
+          </div>
+          <div class="equipment-form__actions">
+            <button class="equipment-form__button equipment-form__button--primary btn2" type="button"><span>Получить КП</span></button>
+            <button class="equipment-form__button equipment-form__button--secondary btn2" type="button"><span>Подобрать оборудование</span></button>
+          </div>
+        </form>
       </section>
     </main>
   </body>

@@ -25,7 +25,7 @@
 .hero__value { display: flex; align-items: baseline; justify-content: flex-end; gap: 3px; font-family: var(--font-heading); font-weight: 900; font-size: 44px; line-height: 1.2; }
 .hero__slashes { font-size: 26px; letter-spacing: -0.1em; color: var(--color-accent); }
 .hero__stat-label { opacity: 0.4; }
-.hero__nav { display: flex; align-items: center; gap: 16px; margin-top: 40px; }
+.hero__nav { position: relative; z-index: 3; display: flex; align-items: center; gap: 16px; margin-top: 40px; }
 .hero__line { flex: 0 0 64px; height: 1px; background: rgb(239 239 239 / 20%); }
 .hero__arrow { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; flex: 0 0 16px; width: 16px; height: 16px; border: 0; padding: 0; color: var(--color-white); background: transparent; }
 .hero__arrow::after { content: ""; position: absolute; inset: -10px -6px; }
@@ -37,7 +37,7 @@
 .hero__total { font-size: 20px; opacity: 0.4; text-box: trim-both cap alphabetic; }
 .hero__progress { position: relative; flex: 1; height: 1px; background: rgb(239 239 239 / 20%); }
 .hero__progress-fill { position: absolute; inset: 0; background: var(--color-background); transform: scaleX(0); transform-origin: left; }
-.hero.is-changing .hero__top, .hero.is-changing .hero__image { animation: hero-reveal 300ms ease; }
+.hero.is-changing .hero__stats, .hero.is-changing .hero__image { animation: hero-reveal 300ms ease; }
 @keyframes hero-reveal { from { opacity: 0; } to { opacity: 1; } }
 
 @media (max-width: 1024px) {
