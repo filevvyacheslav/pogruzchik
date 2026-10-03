@@ -1,0 +1,19 @@
+.services { margin-bottom: var(--section-space); }
+.services__grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
+.service-card__body { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 40px 32px; }
+.service-card__icon { position: relative; flex: 0 0 auto; width: 80px; height: 80px; }
+.service-card__icon img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity 150ms ease; }
+.service-card__icon-hover { opacity: 0; }
+.service-card:hover .service-card__icon-default, .service-card:focus-visible .service-card__icon-default { opacity: 0; }
+.service-card:hover .service-card__icon-hover, .service-card:focus-visible .service-card__icon-hover { opacity: 1; }
+.service-card__title { width: 100%; text-align: center; }
+@media (max-width: 1024px) {
+  .services__grid { gap: 8px; }
+  .service-card__body { padding: 20px 16px; }
+  .service-card__title { width: calc(100% + 32px); margin-inline: -16px; }
+  .service-card__icon { width: 56px; height: 56px; }
+}
+@media (max-width: 767px) {
+  .services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service-card:last-child { grid-column: 1 / -1; }
+}

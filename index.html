@@ -9,12 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/base.css?v=2">
+    <link rel="stylesheet" href="assets/css/base.css?v=3">
     <link rel="stylesheet" href="assets/css/blocks/header.css?v=6">
     <link rel="preload" as="image" href="assets/images/hero1pogr-converted.webp" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/hero1-bg-converted.webp" fetchpriority="high">
     <link rel="stylesheet" href="assets/css/blocks/hero.css?v=3">
-    <link rel="stylesheet" href="assets/css/blocks/equipment-form.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/equipment-form.css?v=2">
+    <link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/services.css?v=1">
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=3" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
@@ -140,6 +142,104 @@
             <button class="equipment-form__button equipment-form__button--secondary btn2" type="button"><span>Подобрать оборудование</span></button>
           </div>
         </form>
+      </section>
+      <section class="section equipment-types container" id="catalog" aria-labelledby="equipment-types-title">
+        <div class="section__heading">
+          <h2 id="equipment-types-title">Оборудование для любых работ</h2>
+          <p class="p1">Выберите тип техники, который подходит под вашу задачу.</p>
+        </div>
+        <div class="equipment-types__grid">
+            <article class="category-card equipment-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="equipment-card__visual">
+                <svg class="equipment-card__shape" viewBox="0 0 308 180" aria-hidden="true" focusable="false"><use href="assets/images/equipment-shapes.svg#pogruzchik"></use></svg>
+                <img class="equipment-card__image" src="assets/images/pogruzchik.png" alt="" width="924" height="540" loading="lazy" decoding="async">
+              </div>
+              <h3 class="equipment-card__title h3AA">Погрузчики</h3>
+            </article>
+            <article class="category-card equipment-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="equipment-card__visual">
+                <svg class="equipment-card__shape" viewBox="0 0 308 180" aria-hidden="true" focusable="false"><use href="assets/images/equipment-shapes.svg#shtabeler"></use></svg>
+                <img class="equipment-card__image" src="assets/images/shtabeler.png" alt="" width="924" height="540" loading="lazy" decoding="async">
+              </div>
+              <h3 class="equipment-card__title h3AA">Штабелеры</h3>
+            </article>
+            <article class="category-card equipment-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="equipment-card__visual">
+                <svg class="equipment-card__shape" viewBox="0 0 308 180" aria-hidden="true" focusable="false"><use href="assets/images/equipment-shapes.svg#rohli"></use></svg>
+                <img class="equipment-card__image" src="assets/images/rohli.png" alt="" width="924" height="540" loading="lazy" decoding="async">
+              </div>
+              <h3 class="equipment-card__title h3AA">Рохли</h3>
+            </article>
+            <article class="category-card equipment-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="equipment-card__visual">
+                <svg class="equipment-card__shape" viewBox="0 0 308 180" aria-hidden="true" focusable="false"><use href="assets/images/equipment-shapes.svg#richtrak"></use></svg>
+                <img class="equipment-card__image" src="assets/images/richtrak.png" alt="" width="924" height="540" loading="lazy" decoding="async">
+              </div>
+              <h3 class="equipment-card__title h3AA">Ричтраки</h3>
+            </article>
+        </div>
+      </section>
+      <section class="section services container" id="services" aria-labelledby="services-title">
+        <div class="section__heading">
+          <h2 id="services-title">Услуги для любых работ</h2>
+          <p class="p1">Выберите тип услуги, который подходит под вашу задачу.</p>
+        </div>
+        <div class="services__grid">
+            <article class="category-card service-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="service-card__body">
+                <div class="service-card__icon" aria-hidden="true">
+                  <img class="service-card__icon-default" src="assets/images/uslugi-11.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                  <img class="service-card__icon-hover" src="assets/images/uslugi-21.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                </div>
+                <h3 class="service-card__title h3AA">Аренда</h3>
+              </div>
+            </article>
+            <article class="category-card service-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="service-card__body">
+                <div class="service-card__icon" aria-hidden="true">
+                  <img class="service-card__icon-default" src="assets/images/uslugi-12.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                  <img class="service-card__icon-hover" src="assets/images/uslugi-22.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                </div>
+                <h3 class="service-card__title h3AA">Трейд-ин</h3>
+              </div>
+            </article>
+            <article class="category-card service-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="service-card__body">
+                <div class="service-card__icon" aria-hidden="true">
+                  <img class="service-card__icon-default" src="assets/images/uslugi-13.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                  <img class="service-card__icon-hover" src="assets/images/uslugi-23.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                </div>
+                <h3 class="service-card__title h3AA">Выкуп</h3>
+              </div>
+            </article>
+            <article class="category-card service-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="service-card__body">
+                <div class="service-card__icon" aria-hidden="true">
+                  <img class="service-card__icon-default" src="assets/images/uslugi-14.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                  <img class="service-card__icon-hover" src="assets/images/uslugi-24.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                </div>
+                <h3 class="service-card__title h3AA">Лизинг</h3>
+              </div>
+            </article>
+            <article class="category-card service-card" tabindex="0">
+              <svg class="category-card__line" viewBox="0 0 308 5" aria-hidden="true" focusable="false"><use href="assets/images/line2.svg#card-line"></use></svg>
+              <div class="service-card__body">
+                <div class="service-card__icon" aria-hidden="true">
+                  <img class="service-card__icon-default" src="assets/images/uslugi-15.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                  <img class="service-card__icon-hover" src="assets/images/uslugi-25.svg" alt="" width="80" height="80" loading="lazy" decoding="async">
+                </div>
+                <h3 class="service-card__title h3AA">Рассрочка</h3>
+              </div>
+            </article>
+        </div>
       </section>
     </main>
   </body>
