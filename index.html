@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/blocks/popular.css?v=1">
     <script src="assets/js/popular.js?v=1" defer></script>
     <link rel="stylesheet" href="assets/css/blocks/application.css?v=1">
-    <script src="assets/js/application.js?v=1" defer></script>
+    <script src="assets/js/application.js?v=2" defer></script>
     <link rel="stylesheet" href="assets/css/blocks/reviews.css?v=1">
     <script src="assets/js/reviews.js?v=1" defer></script>
     <link rel="stylesheet" href="assets/css/blocks/documents.css?v=1">
@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="assets/css/blocks/videos.css?v=1">
     <link rel="stylesheet" href="assets/css/blocks/brands.css?v=1">
     <script src="assets/js/media-showcase.js?v=1" defer></script>
+    <link rel="stylesheet" href="assets/css/blocks/consultation.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/about.css?v=1">
+    <link rel="stylesheet" href="assets/css/blocks/footer.css?v=1">
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=3" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
@@ -469,6 +472,83 @@
           <p class="media-showcase__status visually-hidden" role="status" aria-live="polite"></p>
         </section>
       </div>
+      <section class="section consultation container" id="consultation" aria-labelledby="consultation-title">
+        <div class="consultation__card">
+          <img class="consultation__image" src="assets/images/pogruzchik.png" alt="Вилочный погрузчик" width="924" height="540" loading="lazy" decoding="async">
+          <div class="consultation__intro">
+            <div class="application__heading">
+              <h2 id="consultation-title">Нужна консультация нашего специалиста?</h2>
+              <p class="p2">Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
+            </div>
+            <div class="application__contacts">
+              <div class="application__contact-links">
+                <a class="application__phone h3Aa" href="tel:+78006181647">+7 (800) 618-16-47</a>
+                <a class="application__email p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a>
+              </div>
+              <div class="header-socials" aria-label="Мессенджеры">
+                <span class="header-socials__item" title="WhatsApp — ссылка уточняется"><img src="assets/images/whats.svg" alt="WhatsApp" width="36" height="36" loading="lazy"></span>
+                <span class="header-socials__item" title="Telegram — ссылка уточняется"><img src="assets/images/teleg.svg" alt="Telegram" width="36" height="36" loading="lazy"></span>
+                <span class="header-socials__item" title="MAX — ссылка уточняется"><img src="assets/images/max.svg" alt="MAX" width="36" height="36" loading="lazy"></span>
+              </div>
+            </div>
+          </div>
+          <form class="application__form consultation__form" aria-labelledby="consultation-title">
+            <div class="application__fields">
+              <label class="application__field"><span class="visually-hidden">Ваше имя</span><input class="application__input p1" name="name" autocomplete="name" placeholder="Ваше имя" required><span class="application__required p1" aria-hidden="true">*</span></label>
+              <label class="application__field"><span class="visually-hidden">Телефон</span><input class="application__input p1" name="phone" type="tel" autocomplete="tel" placeholder="Телефон" required><span class="application__required p1" aria-hidden="true">*</span></label>
+            </div>
+            <label class="application__message-label"><span class="visually-hidden">Комментарий к заявке</span><textarea class="application__message p1" name="message" placeholder="Например, список необходимых работ или информация о поломке; код запчасти, а так же любой вопрос"></textarea></label>
+            <div class="application__consent">
+              <div class="application__checkbox-wrap"><input class="application__checkbox" id="consultation-consent" name="consent" type="checkbox" aria-labelledby="consultation-consent-text" required><svg class="application__check" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><use href="assets/images/check.svg#check"></use></svg></div>
+              <p class="p2" id="consultation-consent-text"><label for="consultation-consent">Я даю согласие на </label><a href="#personal-data-consent">обработку персональных данных</a><label for="consultation-consent"> и подтверждаю, что ознакомлен с </label><a href="#privacy-policy">Политикой в отношении обработки персональных данных</a></p>
+            </div>
+            <button class="application__submit btn2" type="submit"><span>Получить КП</span></button>
+            <p class="application__status p2" role="status" hidden></p>
+          </form>
+        </div>
+      </section>
+      <section class="section about container" id="about" aria-labelledby="about-title">
+        <div class="section__heading"><h2 id="about-title">О компании</h2></div>
+        <div class="about__content p1">
+          <p>Компания «Погрузчик» занимается продажей вилочных погрузчиков, внутрискладской техники, а также запчастей к вилочным погрузчикам. Мы являемся официальным дистрибьютором всемирно известного производителя погрузчиков. Также Погрузчик - официальный дилер по таким маркам складской техники и вилочных погрузчиков как CHL, TOR, XILIN, OXLIFT, CAT, PROLIFT, KAUP, ENERSYS и др.</p>
+          <p>Благодаря непрерывному развитию технологий наша компания успешно реализует даже самые амбициозные проекты.</p>
+          <p>Каталог предлагаемой нами техники включает более 150 наименований вилочных погрузчиков и складской техники Doosan с грузоподъемностью от 1 до 25 тонн и высотой подъема до 11,5м.</p>
+          <a class="about__more" href="" data-placeholder-link>Читать больше...</a>
+        </div>
+      </section>
     </main>
+    <footer class="site-footer" id="contacts">
+      <div class="site-footer__inner container">
+        <div class="site-footer__columns">
+          <div class="site-footer__brand">
+            <a class="site-footer__logo" href="./" aria-label="Погрузчик — главная"><img src="assets/images/logo.svg" alt="Погрузчик" width="149" height="36" loading="lazy"></a>
+            <p class="site-footer__description p2">Погрузчики, штабелеры, рохли и ричтраки для погрузки, перемещения и размещения грузов.</p>
+              <div class="header-socials" aria-label="Мессенджеры">
+                <span class="header-socials__item" title="WhatsApp — ссылка уточняется"><img src="assets/images/whats.svg" alt="WhatsApp" width="36" height="36" loading="lazy"></span>
+                <span class="header-socials__item" title="Telegram — ссылка уточняется"><img src="assets/images/teleg.svg" alt="Telegram" width="36" height="36" loading="lazy"></span>
+                <span class="header-socials__item" title="MAX — ссылка уточняется"><img src="assets/images/max.svg" alt="MAX" width="36" height="36" loading="lazy"></span>
+              </div>
+          </div>
+          <nav class="site-footer__group" aria-label="Навигация в подвале">
+            <h3 class="site-footer__heading h4">Навигация</h3>
+            <div class="site-footer__links p2"><a href="#top-positions">Топ позиции</a><a href="#reviews">Отзывы</a><a href="#documents">Документы</a><a href="#contacts">Контакты</a></div>
+          </nav>
+          <nav class="site-footer__group" aria-label="Каталог в подвале">
+            <h3 class="site-footer__heading h4">Каталог</h3>
+            <div class="site-footer__links p2"><a href="#catalog">Погрузчики</a><a href="#catalog">Штабелеры</a><a href="#catalog">Рохли</a><a href="#catalog">Ричтраки</a></div>
+          </nav>
+          <div class="site-footer__group">
+            <h3 class="site-footer__heading h4">Контакты</h3>
+            <dl class="site-footer__contacts p2">
+              <div><dt>Телефон:</dt><dd><a href="tel:+78006181647">+7 (800) 618-16-47</a></dd></div>
+              <div><dt>E-mail:</dt><dd><a href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a></dd></div>
+              <div><dt>Адрес:</dt><dd>г. Москва, ул. Карла-Маркса, 35</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="site-footer__bottom p2"><p>2026 © ООО «Погрузчик»</p><a href="#privacy-policy">Политика обработки персональных данных</a></div>
+      </div>
+    </footer>
+
   </body>
 </html>

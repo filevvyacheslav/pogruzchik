@@ -1,4 +1,4 @@
-.media-showcase { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 104px; margin-bottom: var(--section-space); }
+.media-showcase { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 104px; }
 .media-showcase__panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; gap: var(--section-heading-gap) 16px; min-width: 0; }
 .media-showcase__panel h2 { align-self: center; }
 .media-showcase__controls { display: flex; align-items: stretch; gap: 24px; }
