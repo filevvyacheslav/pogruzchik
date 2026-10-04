@@ -9,4 +9,5 @@
 }
 @media (max-width: 767px) {
   .consultation__card { grid-template-columns: minmax(0, 1fr); gap: 48px; padding: 24px; }
+  .consultation__image { display: block; height: auto; max-width: 246px; margin-inline: auto; }
 }
