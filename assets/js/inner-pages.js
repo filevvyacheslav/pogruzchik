@@ -3,11 +3,39 @@
   document.querySelectorAll('[data-file-list]').forEach(input => {
     const list = document.getElementById(input.dataset.fileList);
     input.addEventListener('change', () => {
+      const limit = Number(input.dataset.maxFiles || 5);
+      const selected = [...input.files];
+      const status = input.closest('form').querySelector('.inner-form__file-status');
+      if (selected.length > limit) {
+        const transfer = new DataTransfer();
+        selected.slice(0, limit).forEach(file => transfer.items.add(file));
+        input.files = transfer.files;
+      }
+      if (status) {
+        status.hidden = selected.length <= limit;
+        status.textContent = `Можно прикрепить до ${limit} фотографий. Оставлены первые ${limit}.`;
+      }
       list.replaceChildren();
       [...input.files].forEach(file => {
         const item = document.createElement('li');
         item.textContent = file.name;
         list.append(item);
+      });
+    });
+  });
+  document.querySelectorAll('.inner-faq').forEach(group => {
+    const items = [...group.querySelectorAll('details')];
+    function select(item, open) {
+      items.forEach(other => { other.open = other === item && open; });
+    }
+    items.forEach(item => {
+      item.addEventListener('click', event => {
+        if (event.target.closest('a, button, input')) return;
+        event.preventDefault();
+        select(item, !item.open);
+      });
+      item.addEventListener('toggle', () => {
+        if (item.open) items.filter(other => other !== item).forEach(other => { other.open = false; });
       });
     });
   });

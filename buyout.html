@@ -8,21 +8,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css?v=4">
-<link rel="stylesheet" href="assets/css/blocks/header.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/footer.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/hero.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/application.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/services.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/videos.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/brands.css?v=9">
-<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=9">
+<link rel="stylesheet" href="assets/css/blocks/header.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/footer.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/hero.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/application.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/services.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/videos.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/brands.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=10">
 <script src="assets/js/header.js?v=2" defer>
 </script>
 <script src="assets/js/application.js?v=3" defer>
 </script>
-<script src="assets/js/inner-pages.js?v=1" defer>
+<script src="assets/js/inner-pages.js?v=2" defer>
 </script>
 <title>Выкуп техники — Погрузчик</title>
 <meta name="description" content="Выкуп техники. Складская техника и услуги компании Погрузчик.">
@@ -129,7 +129,7 @@
 <span>Ричтраки</span>
 <span>Электротележки</span>
 </div>
-<a class="inner-button btn2" href="#estimate">
+<a class="hero__cta btn1" href="#estimate">
 <span>Оценить технику</span>
 </a>
 </div>
@@ -142,7 +142,7 @@
 <div class="application__card">
 <div class="application__intro">
 <div class="application__heading">
-<h2 id="estimate-title">Узнайте предварительную стоимость техники</h2>
+<h2 id="estimate-title">Узнайте стоимость техники</h2>
 </div>
 <div class="application__contacts">
 <div class="application__contact-links">
@@ -193,10 +193,14 @@
 <span class="application__required p1" aria-hidden="true">*</span>
 </label>
 </div>
-<label class="inner-form__file-label p2">Добавить фотографии<input type="file" name="photos" accept="image/*" multiple data-file-list="estimate-files">
+<label class="inner-form__file-label p2">
+<span class="visually-hidden">Добавить фотографии, до 5 фотографий</span>
+<input type="file" name="photos" accept="image/*" multiple data-max-files="5" data-file-list="estimate-files">
 </label>
 <ul class="inner-form__files p2" id="estimate-files" aria-live="polite">
 </ul>
+<p class="inner-form__file-status p2" role="status" hidden>
+</p>
 <label class="application__message-label">
 <span class="visually-hidden">Комментарий к заявке</span>
 <textarea class="application__message p1" name="message" placeholder="Комментарий к заявке">
@@ -268,7 +272,7 @@
 <h2>Вопросы о выкупе</h2>
 </div>
 <div class="inner-faq">
-<details>
+<details open>
 <summary>Как определяется стоимость?</summary>
 <p class="p1">Оцениваем технику индивидуально с учётом модели, года выпуска, состояния, наработки и комплектации.</p>
 </details>
@@ -332,10 +336,14 @@
 <input class="application__input p1" name="email" type="email" autocomplete="email" placeholder="Email">
 </label>
 </div>
-<label class="inner-form__file-label p2">Добавить фотографии<input type="file" name="photos" accept="image/*" multiple data-file-list="application-files">
+<label class="inner-form__file-label p2">
+<span class="visually-hidden">Добавить фотографии, до 5 фотографий</span>
+<input type="file" name="photos" accept="image/*" multiple data-max-files="5" data-file-list="application-files">
 </label>
 <ul class="inner-form__files p2" id="application-files" aria-live="polite">
 </ul>
+<p class="inner-form__file-status p2" role="status" hidden>
+</p>
 <label class="application__message-label">
 <span class="visually-hidden">Комментарий к заявке</span>
 <textarea class="application__message p1" name="message" placeholder="Комментарий к заявке">

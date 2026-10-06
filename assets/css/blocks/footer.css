@@ -23,6 +23,7 @@
   .site-footer__bottom { margin-top: 32px; padding-top: 24px; }
 }
 @media (max-width: 767px) {
+  .site-footer__navigation-columns { grid-template-columns: minmax(0, 1fr); }
   .site-footer__columns { grid-template-columns: minmax(0, 1fr); gap: 48px; text-align: center; }
   .site-footer__brand, .site-footer__links { align-items: center; }
   .site-footer__brand { gap: 24px; }
