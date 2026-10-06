@@ -1,6 +1,7 @@
 .site-footer { margin-top: var(--section-space); color: var(--color-white); background: var(--color-text); }
 .site-footer__inner { padding-block: 64px; }
-.site-footer__columns { display: grid; grid-template-columns: 1.45fr 1fr 0.95fr 1fr; gap: 48px; }
+.site-footer__columns { display: grid; grid-template-columns: 1.15fr 2fr 0.8fr 1.2fr; gap: 48px; }
+.site-footer__navigation-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .site-footer__brand { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .site-footer__logo { width: 148px; }
 .site-footer__description { max-width: 220px; color: rgb(255 255 255 / 40%); }
@@ -16,7 +17,8 @@
 .site-footer__bottom p { color: rgb(255 255 255 / 40%); }
 @media (max-width: 1024px) {
   .site-footer__inner { padding-block: 48px; }
-  .site-footer__columns { grid-template-columns: 1.15fr 0.7fr 0.65fr 1.5fr; gap: 24px; }
+  .site-footer__columns { grid-template-columns: 1fr 2fr 0.8fr 1.3fr; gap: 16px; }
+  .site-footer__navigation-columns { gap: 16px; }
   .site-footer__logo { width: 148px; }
   .site-footer__bottom { margin-top: 32px; padding-top: 24px; }
 }
@@ -28,6 +30,3 @@
   .site-footer__heading { margin-bottom: 24px; }
   .site-footer__bottom { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
 }
-.site-footer__pages { display: flex; flex-wrap: wrap; gap: 16px 24px; padding-top: 32px; margin-top: 32px; border-top: 1px solid rgb(255 255 255 / 10%); }
-.site-footer__pages a { color: rgb(255 255 255 / 80%); }
-@media (max-width: 767px) { .site-footer__pages { justify-content: center; } }

@@ -25,15 +25,13 @@ def links(html):
     return html
 header, footer = links(header), links(footer)
 footer = re.sub(r'<nav class="site-footer__pages.*?</nav>', '', footer, flags=re.S)
-# Expose every prepared page from the common footer without crowding the main nav.
-footer = footer.replace('<div class="site-footer__bottom p2">', '<nav class="site-footer__pages p2" aria-label="Страницы сайта">' + ''.join(f'<a href="{slug}.html">{title}</a>' for slug, title in pages if slug != 'vacancy-sales') + '</nav><div class="site-footer__bottom p2">')
 socials = re.search(r'<div class="header-socials" aria-label="Мессенджеры">.*?</div>', home, re.S).group()
 contact = '<div class="application__contacts"><div class="application__contact-links"><a class="h3Aa" href="tel:+78006181647">+7 (800) 618-16-47</a><a class="p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a></div>' + socials + '</div>'
-styles = ['header', 'footer', 'application', 'equipment-types', 'services', 'reviews', 'videos', 'brands', 'inner-pages']
+styles = ['header', 'footer', 'hero', 'application', 'equipment-types', 'services', 'reviews', 'videos', 'brands', 'inner-pages']
 head = '''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=7">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=1" defer></script>'''
+<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=8">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=1" defer></script>'''
 def button(text, href='#application'):
     return f'<a class="inner-button btn2" href="{href}"><span>{text}</span></a>'
 def visual(dark=False):
@@ -78,7 +76,8 @@ def category_section(id, title):
     return result
 contents = {}
 contents['about'] = hero('Техника, на которую можно положиться','Помогаем бизнесу решать задачи по перемещению, подъёму и хранению грузов. Подбираем складскую технику под конкретные условия эксплуатации — от разовых работ до постоянного оснащения предприятий.',dark=True)
-contents['about'] += section('Компания в движении','<div class="inner-split"><div class="inner-copy"><h2>Не просто поставляем технику. Помогаем подобрать рабочее решение.</h2><p class="p1">В каталоге представлены погрузчики, штабелеры, ричтраки, складские тележки и другое оборудование для бизнеса. Помогаем подобрать технику с учётом груза, высоты подъёма, условий эксплуатации и интенсивности работы.</p></div><div class="inner-visuals">'+visual()+visual()+'</div></div>')
+contents['about'] = contents['about'].replace('inner-hero--dark', 'inner-hero--dark inner-hero--contained')
+contents['about'] += '<section class="section container"><div class="inner-split"><div class="inner-copy"><h2>Не просто поставляем технику. Помогаем подобрать рабочее решение.</h2><p class="p1">В каталоге представлены погрузчики, штабелеры, ричтраки, складские тележки и другое оборудование для бизнеса. Помогаем подобрать технику с учётом груза, высоты подъёма, условий эксплуатации и интенсивности работы.</p></div><div class="inner-visuals">'+visual()+visual()+'</div></div></section>'
 contents['about'] += category_section('catalog','Что мы можем предложить') + category_section('services','Один партнёр — разные задачи')
 brand_grid = re.search(r'<div class="brands__grid">.*?</div>\s*<p class="media-showcase__status', home, re.S).group().split('<p class="media-showcase__status')[0]
 contents['about'] += section('Работаем с техникой ведущих производителей',brand_grid,'inner-brands') + form('Нужна техника под конкретную задачу?','Расскажите, где и с какими грузами предстоит работать. Поможем подобрать подходящий вариант.','Подобрать технику')
@@ -88,11 +87,10 @@ jobs = '<div class="inner-grid inner-grid--three inner-jobs">'
 for title, link in [('Менеджер по продажам','vacancy-sales.html'),('Сервисный механик','#application'),('Менеджер по работе с клиентами','#application')]:
     jobs += f'<a class="inner-card" href="{link}"><h3>{title}</h3><p class="p2">Москва · Полная занятость</p><span class="inner-card__link">' + ('Подробнее' if '.html' in link else 'Откликнуться') + ' →</span></a>'
 contents['careers'] += section('Открытые вакансии',jobs+'</div>') + form('Не нашли подходящей вакансии?','Отправьте резюме. Если появится подходящая позиция, мы сможем с вами связаться.','Отправить резюме',attachment='Прикрепить резюме',message=None)
-contents['vacancy-sales'] = hero('Менеджер по продажам складской техники',action=button('Откликнуться'),tags=['Москва','Полная занятость','Опыт: от 1 года'])
-contents['vacancy-sales'] += section('О вакансии','<p class="p1">Ищем специалиста, который будет работать с входящими обращениями, помогать клиентам выбирать технику и сопровождать сделки.</p>')
+contents['vacancy-sales'] = '<div class="vacancy-layout container"><div class="vacancy-layout__intro"><h1>Менеджер по продажам складской техники</h1><div class="inner-tags p2"><span>Москва</span><span>Полная занятость</span><span>Опыт: от 1 года</span></div><a class="hero__cta btn1" href="#application"><span>Откликнуться</span></a></div><div class="vacancy-layout__details"><section class="vacancy-layout__section"><h2>О вакансии</h2><p class="p1">Ищем специалиста, который будет работать с входящими обращениями, помогать клиентам выбирать технику и сопровождать сделки.</p></section>'
 for title, items in [('Чем предстоит заниматься',['Общаться с клиентами и обрабатывать обращения','Выявлять задачи и потребности клиента','Подбирать подходящую технику','Подготавливать коммерческие предложения','Сопровождать клиента на этапах сделки','Работать с текущей клиентской базой']),('Что ожидаем',['Умение общаться с клиентами','Ответственность и самостоятельность','Желание разбираться в продукте','Опыт продаж будет преимуществом','Уверенная работа с ПК'])]:
-    contents['vacancy-sales'] += section(title,'<ul class="inner-list p1">'+''.join('<li>'+x+'</li>' for x in items)+'</ul>')
-contents['vacancy-sales'] += section('Что предлагаем',cards([(x,'') for x in ['Стабильная работа','Понятная система задач','Обучение продукту','Возможность профессионального роста']])) + form('Хотите работать с нами?','Оставьте контакты и прикрепите резюме.','Откликнуться на вакансию',attachment='Прикрепить резюме',message=None)
+    contents['vacancy-sales'] += '<section class="vacancy-layout__section"><h2>'+title+'</h2><ul class="inner-list p1">'+''.join('<li>'+x+'</li>' for x in items)+'</ul></section>'
+contents['vacancy-sales'] += '<section class="vacancy-layout__section"><h2>Что предлагаем</h2><ul class="inner-list p1">'+''.join('<li>'+x+'</li>' for x in ['Стабильная работа','Понятная система задач','Обучение продукту','Возможность профессионального роста'])+'</ul></section></div></div>' + form('Хотите работать с нами?','Оставьте контакты и прикрепите резюме.','Откликнуться на вакансию',attachment='Прикрепить резюме',message=None)
 contents['buyout'] = hero('Выкупим вашу складскую технику','Предложите погрузчик или другую складскую технику на выкуп. Оценим оборудование и предложим условия сделки.',button('Оценить технику','#estimate'),split=True,tags=['Погрузчики','Штабелеры','Ричтраки','Электротележки'])
 contents['buyout'] += form('Узнайте предварительную стоимость техники',btn='Получить оценку',fields=[('model','Марка / модель','text',True),('year','Год выпуска','number',False),('hours','Наработка','number',False),('phone','Телефон','tel',True)],attachment='Добавить фотографии',multiple=True,accept='image/*',key='estimate')
 contents['buyout'] += section('Как проходит выкуп',steps(['Оставляете заявку','Оцениваем технику','Согласовываем условия','Оформляем сделку']))

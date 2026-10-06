@@ -8,15 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css?v=4">
-<link rel="stylesheet" href="assets/css/blocks/header.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/footer.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/application.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/services.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/videos.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/brands.css?v=7">
-<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=7">
+<link rel="stylesheet" href="assets/css/blocks/header.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/footer.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/hero.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/application.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/services.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/videos.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/brands.css?v=8">
+<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=8">
 <script src="assets/js/header.js?v=2" defer>
 </script>
 <script src="assets/js/application.js?v=3" defer>
@@ -118,31 +119,25 @@
 <span aria-hidden="true">/</span>
 <span aria-current="page">Менеджер по продажам</span>
 </nav>
-<section class="inner-hero">
-<div class="container">
-<div class="inner-hero__content">
+<div class="vacancy-layout container">
+<div class="vacancy-layout__intro">
 <h1>Менеджер по продажам складской техники</h1>
 <div class="inner-tags p2">
 <span>Москва</span>
 <span>Полная занятость</span>
 <span>Опыт: от 1 года</span>
 </div>
-<a class="inner-button btn2" href="#application">
+<a class="hero__cta btn1" href="#application">
 <span>Откликнуться</span>
 </a>
 </div>
-</div>
-</section>
-<section class="section container ">
-<div class="section__heading">
+<div class="vacancy-layout__details">
+<section class="vacancy-layout__section">
 <h2>О вакансии</h2>
-</div>
 <p class="p1">Ищем специалиста, который будет работать с входящими обращениями, помогать клиентам выбирать технику и сопровождать сделки.</p>
 </section>
-<section class="section container ">
-<div class="section__heading">
+<section class="vacancy-layout__section">
 <h2>Чем предстоит заниматься</h2>
-</div>
 <ul class="inner-list p1">
 <li>Общаться с клиентами и обрабатывать обращения</li>
 <li>Выявлять задачи и потребности клиента</li>
@@ -152,10 +147,8 @@
 <li>Работать с текущей клиентской базой</li>
 </ul>
 </section>
-<section class="section container ">
-<div class="section__heading">
+<section class="vacancy-layout__section">
 <h2>Что ожидаем</h2>
-</div>
 <ul class="inner-list p1">
 <li>Умение общаться с клиентами</li>
 <li>Ответственность и самостоятельность</li>
@@ -164,25 +157,17 @@
 <li>Уверенная работа с ПК</li>
 </ul>
 </section>
-<section class="section container ">
-<div class="section__heading">
+<section class="vacancy-layout__section">
 <h2>Что предлагаем</h2>
-</div>
-<div class="inner-grid ">
-<article class="inner-card">
-<h3>Стабильная работа</h3>
-</article>
-<article class="inner-card">
-<h3>Понятная система задач</h3>
-</article>
-<article class="inner-card">
-<h3>Обучение продукту</h3>
-</article>
-<article class="inner-card">
-<h3>Возможность профессионального роста</h3>
-</article>
-</div>
+<ul class="inner-list p1">
+<li>Стабильная работа</li>
+<li>Понятная система задач</li>
+<li>Обучение продукту</li>
+<li>Возможность профессионального роста</li>
+</ul>
 </section>
+</div>
+</div>
 <section class="section application inner-form container" id="application" aria-labelledby="application-title">
 <div class="application__card">
 <div class="application__intro">
@@ -288,14 +273,25 @@
               </div>
           </div>
           <nav class="site-footer__group" aria-label="Навигация в подвале">
-            <h3 class="site-footer__heading h4">Навигация</h3>
-            <div class="site-footer__links p2">
+<h3 class="site-footer__heading h4">Навигация</h3>
+<div class="site-footer__navigation-columns">
+<div class="site-footer__links p2">
 <a href="index.html#top-positions">Топ позиции</a>
+<a href="about.html">О компании</a>
+<a href="careers.html">Вакансии</a>
+<a href="buyout.html">Выкуп авто</a>
+<a href="promotions.html">Акции</a>
+<a href="service.html">Сервис</a>
+</div>
+<div class="site-footer__links p2">
+<a href="payment.html">Оплата</a>
+<a href="delivery.html">Доставка</a>
 <a href="reviews.html">Отзывы</a>
 <a href="index.html#documents">Документы</a>
 <a href="contacts.html">Контакты</a>
 </div>
-          </nav>
+</div>
+</nav>
           <nav class="site-footer__group" aria-label="Каталог в подвале">
             <h3 class="site-footer__heading h4">Каталог</h3>
             <div class="site-footer__links p2">
@@ -327,19 +323,8 @@
             </dl>
           </div>
         </div>
-        
-        <nav class="site-footer__pages p2" aria-label="Страницы сайта">
-<a href="about.html">О компании</a>
-<a href="careers.html">Вакансии</a>
-<a href="buyout.html">Выкуп техники</a>
-<a href="promotions.html">Акции</a>
-<a href="service.html">Сервис</a>
-<a href="payment.html">Оплата</a>
-<a href="delivery.html">Доставка</a>
-<a href="reviews.html">Отзывы</a>
-<a href="contacts.html">Контакты</a>
-</nav>
-<div class="site-footer__bottom p2">
+
+        <div class="site-footer__bottom p2">
 <p>2026 © ООО «Погрузчик»</p>
 <a href="index.html#privacy-policy">Политика обработки персональных данных</a>
 </div>

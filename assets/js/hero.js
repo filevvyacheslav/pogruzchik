@@ -9,8 +9,13 @@
   const progress = hero.querySelector('.hero__progress-fill');
   const duration = 10000;
   // Слайды меняют только фото и показатели. Левый блок остаётся неподвижным.
-  const slides = Array.from({ length: 4 }, () => ({
-    image: 'assets/images/hero1pogr-converted.webp',
+  const slides = [
+    { image: 'assets/images/hero1pogr-converted.webp', kind: 'forklift' },
+    { image: 'assets/images/hero-stacker.webp', kind: 'stacker' },
+    { image: 'assets/images/hero-pallet.webp', kind: 'pallet' },
+    { image: 'assets/images/hero-reach.webp', kind: 'reach' },
+  ].map(slide => ({
+    ...slide,
     stats: [
       { value: '150+', label: 'Техники в каталоге' },
       { value: '5т', label: 'Грузоподъемность' },
@@ -58,6 +63,7 @@
     if (request !== pending) return;
     index = next;
     photo.src = slide.image;
+    hero.dataset.slideKind = slide.kind;
     stats.forEach((stat, position) => {
       stat.querySelector('.hero__number').textContent = slide.stats[position].value;
       stat.querySelector('.hero__stat-label').textContent = slide.stats[position].label;
