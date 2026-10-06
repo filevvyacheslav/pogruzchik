@@ -15,6 +15,8 @@
 .inner-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; min-width: 0; }
 .inner-visual { min-height: 360px; border-radius: 6px; background: white; }
 .inner-visual--dark { background: #303030; }
+.inner-visual--photo { display: block; width: 100%; height: 360px; object-fit: cover; }
+.inner-card__icon { width: 64px; height: 64px; flex-shrink: 0; }
 .inner-visuals { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: end; }
 .inner-visuals .inner-visual:last-child { min-height: 260px; }
 .inner-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
@@ -88,6 +90,7 @@ body.has-dialog { overflow: hidden; }
   .inner-hero { padding-block: 24px; }
   .inner-split, .inner-split--map, .inner-form .application__card { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .inner-visual { min-height: 260px; }
+  .inner-visual--photo { height: 260px; }
   .inner-visuals { gap: 16px; }
   .inner-visuals .inner-visual { min-height: 220px; }
   .inner-visuals .inner-visual:last-child { min-height: 160px; }

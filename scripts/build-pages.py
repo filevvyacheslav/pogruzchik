@@ -31,7 +31,7 @@ styles = ['header', 'footer', 'hero', 'application', 'equipment-types', 'service
 head = '''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=8">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=1" defer></script>'''
+<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=9">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=1" defer></script>'''
 def button(text, href='#application'):
     return f'<a class="inner-button btn2" href="{href}"><span>{text}</span></a>'
 def visual(dark=False):
@@ -44,8 +44,8 @@ def hero(title, description='', action='', dark=False, split=False, tags=()):
     copy += action + '</div>'
     if split: copy = '<div class="inner-split">' + copy + visual() + '</div>'
     return f'<section class="inner-hero{" inner-hero--dark" if dark else ""}"><div class="container">{copy}</div></section>'
-def cards(items, columns=''):
-    return f'<div class="inner-grid {columns}">' + ''.join(f'<article class="inner-card"><h3>{t}</h3>' + (f'<p class="p1">{d}</p>' if d else '') + '</article>' for t, d in items) + '</div>'
+def cards(items, columns='', icons=()):
+    return f'<div class="inner-grid {columns}">' + ''.join('<article class="inner-card">' + (f'<img class="inner-card__icon" src="{icons[i]}" width="64" height="64" alt="" loading="lazy">' if icons else '') + f'<h3>{t}</h3>' + (f'<p class="p1">{d}</p>' if d else '') + '</article>' for i, (t, d) in enumerate(items)) + '</div>'
 def steps(items):
     return '<ol class="inner-grid inner-steps" role="list">' + ''.join(f'<li class="inner-card"><span class="inner-step-number" aria-hidden="true">{i:02}</span><p class="p1">{t}</p></li>' for i, t in enumerate(items, 1)) + '</ol>'
 def field(name, label, kind='text', required=False):
@@ -82,7 +82,8 @@ contents['about'] += category_section('catalog','Что мы можем пред
 brand_grid = re.search(r'<div class="brands__grid">.*?</div>\s*<p class="media-showcase__status', home, re.S).group().split('<p class="media-showcase__status')[0]
 contents['about'] += section('Работаем с техникой ведущих производителей',brand_grid,'inner-brands') + form('Нужна техника под конкретную задачу?','Расскажите, где и с какими грузами предстоит работать. Поможем подобрать подходящий вариант.','Подобрать технику')
 contents['careers'] = hero('Работайте с нами','Ищем людей, которым интересно развиваться вместе с компанией и работать с современной складской техникой.',split=True)
-contents['careers'] += section('Работа, в которой есть результат', cards([('Понятные задачи','Вы знаете свою зону ответственности и ожидаемый результат.'),('Работа с техникой','Реальный продукт и понятная сфера бизнеса.'),('Развитие','Возможность получать новый опыт и расти внутри своего направления.'),('Команда','Работаем вместе и помогаем друг другу решать задачи.')]))
+contents['careers'] = contents['careers'].replace(visual(), '<img class="inner-visual inner-visual--photo" src="assets/images/careers-team.png" width="1240" height="680" alt="Команда на территории склада" fetchpriority="high">')
+contents['careers'] += section('Работа, в которой есть результат', cards([('Понятные задачи','Вы знаете свою зону ответственности и ожидаемый результат.'),('Работа с техникой','Реальный продукт и понятная сфера бизнеса.'),('Развитие','Возможность получать новый опыт и расти внутри своего направления.'),('Команда','Работаем вместе и помогаем друг другу решать задачи.')], icons=[f'assets/images/careers-benefit-{i}.svg' for i in range(1, 5)]))
 jobs = '<div class="inner-grid inner-grid--three inner-jobs">'
 for title, link in [('Менеджер по продажам','vacancy-sales.html'),('Сервисный механик','#application'),('Менеджер по работе с клиентами','#application')]:
     jobs += f'<a class="inner-card" href="{link}"><h3>{title}</h3><p class="p2">Москва · Полная занятость</p><span class="inner-card__link">' + ('Подробнее' if '.html' in link else 'Откликнуться') + ' →</span></a>'

@@ -11,9 +11,9 @@
   // Слайды меняют только фото и показатели. Левый блок остаётся неподвижным.
   const slides = [
     { image: 'assets/images/hero1pogr-converted.webp', kind: 'forklift' },
-    { image: 'assets/images/hero-stacker.webp', kind: 'stacker' },
-    { image: 'assets/images/hero-pallet.webp', kind: 'pallet' },
-    { image: 'assets/images/hero-reach.webp', kind: 'reach' },
+    { image: 'assets/images/hero-stacker.webp?v=2', kind: 'stacker' },
+    { image: 'assets/images/hero-pallet.webp?v=2', kind: 'pallet' },
+    { image: 'assets/images/hero-reach.webp?v=2', kind: 'reach' },
   ].map(slide => ({
     ...slide,
     stats: [
