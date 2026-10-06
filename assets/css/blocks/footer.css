@@ -28,3 +28,6 @@
   .site-footer__heading { margin-bottom: 24px; }
   .site-footer__bottom { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
 }
+.site-footer__pages { display: flex; flex-wrap: wrap; gap: 16px 24px; padding-top: 32px; margin-top: 32px; border-top: 1px solid rgb(255 255 255 / 10%); }
+.site-footer__pages a { color: rgb(255 255 255 / 80%); }
+@media (max-width: 767px) { .site-footer__pages { justify-content: center; } }
