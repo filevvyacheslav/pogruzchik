@@ -8,16 +8,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css?v=4">
-<link rel="stylesheet" href="assets/css/blocks/header.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/footer.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/hero.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/application.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/services.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/videos.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/brands.css?v=10">
-<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=10">
+<link rel="stylesheet" href="assets/css/blocks/header.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/footer.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/hero.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/application.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/services.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/videos.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/brands.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=11">
 <script src="assets/js/header.js?v=2" defer>
 </script>
 <script src="assets/js/application.js?v=3" defer>
@@ -117,7 +117,7 @@
 <span aria-hidden="true">/</span>
 <span aria-current="page">Выкуп техники</span>
 </nav>
-<section class="inner-hero">
+<section class="inner-hero inner-hero--photo">
 <div class="container">
 <div class="inner-split">
 <div class="inner-hero__content">
@@ -129,104 +129,14 @@
 <span>Ричтраки</span>
 <span>Электротележки</span>
 </div>
-<a class="hero__cta btn1" href="#estimate">
+<a class="hero__cta btn1" href="#application">
 <span>Оценить технику</span>
 </a>
 </div>
-<div class="inner-visual" aria-hidden="true">
+<div class="inner-hero__photo">
+<img src="assets/images/buyout-forklift.webp" alt="Погрузчик с грузом на складе" fetchpriority="high">
 </div>
 </div>
-</div>
-</section>
-<section class="section application inner-form container" id="estimate" aria-labelledby="estimate-title">
-<div class="application__card">
-<div class="application__intro">
-<div class="application__heading">
-<h2 id="estimate-title">Узнайте стоимость техники</h2>
-</div>
-<div class="application__contacts">
-<div class="application__contact-links">
-<a class="h3Aa" href="tel:+78006181647">+7 (800) 618-16-47</a>
-<a class="p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a>
-</div>
-<div class="header-socials" aria-label="Мессенджеры">
-                <span class="header-socials__item" title="WhatsApp — ссылка уточняется">
-<img src="assets/images/whats.svg" alt="WhatsApp" width="36" height="36" loading="lazy">
-</span>
-                <span class="header-socials__item" title="Telegram — ссылка уточняется">
-<img src="assets/images/teleg.svg" alt="Telegram" width="36" height="36" loading="lazy">
-</span>
-                <span class="header-socials__item" title="MAX — ссылка уточняется">
-<img src="assets/images/max.svg" alt="MAX" width="36" height="36" loading="lazy">
-</span>
-              </div>
-</div>
-</div>
-<form class="application__form" aria-labelledby="estimate-title">
-<div class="application__fields">
-<label class="application__field">
-<span class="visually-hidden">Тип техники</span>
-<select class="application__input p1" name="equipment-type" required>
-<option value="">Тип техники</option>
-<option>Погрузчики</option>
-<option>Штабелеры</option>
-<option>Ричтраки</option>
-<option>Электротележки</option>
-</select>
-</label>
-<label class="application__field">
-<span class="visually-hidden">Марка / модель</span>
-<input class="application__input p1" name="model" type="text" autocomplete="off" placeholder="Марка / модель" required>
-<span class="application__required p1" aria-hidden="true">*</span>
-</label>
-<label class="application__field">
-<span class="visually-hidden">Год выпуска</span>
-<input class="application__input p1" name="year" type="number" autocomplete="off" placeholder="Год выпуска">
-</label>
-<label class="application__field">
-<span class="visually-hidden">Наработка</span>
-<input class="application__input p1" name="hours" type="number" autocomplete="off" placeholder="Наработка">
-</label>
-<label class="application__field">
-<span class="visually-hidden">Телефон</span>
-<input class="application__input p1" name="phone" type="tel" autocomplete="tel" placeholder="Телефон" required>
-<span class="application__required p1" aria-hidden="true">*</span>
-</label>
-</div>
-<label class="inner-form__file-label p2">
-<span class="visually-hidden">Добавить фотографии, до 5 фотографий</span>
-<input type="file" name="photos" accept="image/*" multiple data-max-files="5" data-file-list="estimate-files">
-</label>
-<ul class="inner-form__files p2" id="estimate-files" aria-live="polite">
-</ul>
-<p class="inner-form__file-status p2" role="status" hidden>
-</p>
-<label class="application__message-label">
-<span class="visually-hidden">Комментарий к заявке</span>
-<textarea class="application__message p1" name="message" placeholder="Комментарий к заявке">
-</textarea>
-</label>
-<div class="application__consent">
-<div class="application__checkbox-wrap">
-<input class="application__checkbox" id="estimate-consent" name="consent" type="checkbox" aria-labelledby="estimate-consent-text" required>
-<svg class="application__check" viewBox="0 0 12 12" aria-hidden="true">
-<use href="assets/images/check.svg#check">
-</use>
-</svg>
-</div>
-<p class="p2" id="estimate-consent-text">
-<label for="estimate-consent">Я даю согласие на </label>
-<a href="index.html#personal-data-consent">обработку персональных данных</a>
-<label for="estimate-consent"> и подтверждаю, что ознакомлен с </label>
-<a href="index.html#privacy-policy">Политикой в отношении обработки персональных данных</a>
-</p>
-</div>
-<button class="application__submit btn2" type="submit">
-<span>Получить оценку</span>
-</button>
-<p class="application__status p2" role="status" hidden>
-</p>
-</form>
 </div>
 </section>
 <section class="section container ">

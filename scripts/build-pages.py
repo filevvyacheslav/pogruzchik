@@ -31,7 +31,7 @@ styles = ['header', 'footer', 'hero', 'application', 'equipment-types', 'service
 head = '''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=10">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=2" defer></script>'''
+<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=11">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=2" defer></script>'''
 def button(text, href='#application'):
     return f'<a class="inner-button btn2" href="{href}"><span>{text}</span></a>'
 def visual(dark=False):
@@ -44,6 +44,16 @@ def hero(title, description='', action='', dark=False, split=False, tags=()):
     copy += action + '</div>'
     if split: copy = '<div class="inner-split">' + copy + visual() + '</div>'
     return f'<section class="inner-hero{" inner-hero--dark" if dark else ""}"><div class="container">{copy}</div></section>'
+def photo_hero(title, description, action, image, alt, tags=()):
+    result = hero(title, description, action, split=True, tags=tags)
+    return result.replace('class="inner-hero"', 'class="inner-hero inner-hero--photo"').replace(visual(), f'<div class="inner-hero__photo"><img src="{image}" alt="{alt}" fetchpriority="high"></div>')
+
+def information_layout(title, description, sections):
+    content = '<div class="vacancy-layout container"><div class="vacancy-layout__intro"><h1>'+title+'</h1><p class="p1">'+description+'</p></div><div class="vacancy-layout__details">'
+    for heading, items in sections:
+        content += '<section class="vacancy-layout__section"><h2>'+heading+'</h2><ul class="inner-list p1">'+''.join('<li>'+item+'</li>' for item in items)+'</ul></section>'
+    return content+'</div></div>'
+
 def cards(items, columns='', icons=()):
     return f'<div class="inner-grid {columns}">' + ''.join('<article class="inner-card">' + (f'<img class="inner-card__icon" src="{icons[i]}" width="64" height="64" alt="" loading="lazy">' if icons else '') + f'<h3>{t}</h3>' + (f'<p class="p1">{d}</p>' if d else '') + '</article>' for i, (t, d) in enumerate(items)) + '</div>'
 def steps(items):
@@ -92,33 +102,31 @@ contents['vacancy-sales'] = '<div class="vacancy-layout container"><div class="v
 for title, items in [('Чем предстоит заниматься',['Общаться с клиентами и обрабатывать обращения','Выявлять задачи и потребности клиента','Подбирать подходящую технику','Подготавливать коммерческие предложения','Сопровождать клиента на этапах сделки','Работать с текущей клиентской базой']),('Что ожидаем',['Умение общаться с клиентами','Ответственность и самостоятельность','Желание разбираться в продукте','Опыт продаж будет преимуществом','Уверенная работа с ПК'])]:
     contents['vacancy-sales'] += '<section class="vacancy-layout__section"><h2>'+title+'</h2><ul class="inner-list p1">'+''.join('<li>'+x+'</li>' for x in items)+'</ul></section>'
 contents['vacancy-sales'] += '<section class="vacancy-layout__section"><h2>Что предлагаем</h2><ul class="inner-list p1">'+''.join('<li>'+x+'</li>' for x in ['Стабильная работа','Понятная система задач','Обучение продукту','Возможность профессионального роста'])+'</ul></section></div></div>' + form('Хотите работать с нами?','Оставьте контакты и прикрепите резюме.','Откликнуться на вакансию',attachment='Прикрепить резюме',message=None)
-contents['buyout'] = hero('Выкупим вашу складскую технику','Предложите погрузчик или другую складскую технику на выкуп. Оценим оборудование и предложим условия сделки.','<a class="hero__cta btn1" href="#estimate"><span>Оценить технику</span></a>',split=True,tags=['Погрузчики','Штабелеры','Ричтраки','Электротележки'])
-contents['buyout'] += form('Узнайте стоимость техники',btn='Получить оценку',fields=[('model','Марка / модель','text',True),('year','Год выпуска','number',False),('hours','Наработка','number',False),('phone','Телефон','tel',True)],attachment='Добавить фотографии',multiple=True,accept='image/*',key='estimate')
+contents['buyout'] = photo_hero('Выкупим вашу складскую технику','Предложите погрузчик или другую складскую технику на выкуп. Оценим оборудование и предложим условия сделки.','<a class="hero__cta btn1" href="#application"><span>Оценить технику</span></a>','assets/images/buyout-forklift.webp','Погрузчик с грузом на складе',tags=['Погрузчики','Штабелеры','Ричтраки','Электротележки'])
+
 contents['buyout'] += section('Как проходит выкуп',steps(['Оставляете заявку','Оцениваем технику','Согласовываем условия','Оформляем сделку']))
 contents['buyout'] += section('Техника не обязательно должна быть новой','<div class="inner-split"><p class="p1">Рассматриваем оборудование с пробегом и оцениваем его индивидуально с учётом модели, года выпуска, состояния, наработки и комплектации.</p><div class="inner-tags p1">'+''.join('<span>'+x+'</span>' for x in ['Марка','Год','Наработка','Состояние','Комплектация'])+'</div></div>')
 faq = [('Как определяется стоимость?','Оцениваем технику индивидуально с учётом модели, года выпуска, состояния, наработки и комплектации.'),('Как быстро можно получить оценку?','Специалист свяжется с вами после рассмотрения заявки. Срок можно уточнить по телефону.'),('Можно ли продать неисправную технику?','Укажите неисправности в комментарии и приложите фотографии, чтобы специалист мог рассмотреть заявку.'),('Какие документы понадобятся?','Перечень документов специалист уточнит при согласовании условий сделки.'),('Выкупаете ли несколько единиц сразу?','Перечислите технику в комментарии. Специалист рассмотрит заявку и предложит условия.')]
 contents['buyout'] += section('Вопросы о выкупе','<div class="inner-faq">'+''.join(f'<details'+(' open' if i == 0 else '')+f'><summary>{q}</summary><p class="p1">{a}</p></details>' for i,(q,a) in enumerate(faq))+'</div>') + form('Есть техника на продажу?','Пришлите информацию и фотографии — специалист свяжется с вами после рассмотрения заявки.',btn='Предложить технику',attachment='Добавить фотографии',multiple=True,accept='image/*')
-contents['promotions'] = hero('Акции и специальные предложения','Выгодные условия на покупку, аренду и обслуживание складской техники.')
+contents['promotions'] = hero('Акции и специальные предложения','Выгодные условия на покупку, аренду и обслуживание складской техники.').replace('class="inner-hero"', 'class="inner-hero inner-hero--compact"')
 promo = '<div class="inner-grid inner-grid--two">'
 for i,t in enumerate(['Специальные условия на аренду погрузчиков','Выгодные условия на технику с пробегом','Специальное предложение на сервис','Лизинг на специальных условиях']):
     ended = i == 2
     promo += f'<article class="inner-card{" inner-card--ended" if ended else ""}"><span class="inner-promotion__status">' + ('Завершённая акция · пример' if ended else 'Активная акция · пример') + f'</span><h3>{t}</h3><p class="p2">Условия и срок акции уточняются.</p>'+ ('' if ended else button('Подробнее')) + '</article>'
 contents['promotions'] += '<section class="section container">'+promo+'</div></section>' + form('Не нашли подходящей акции?','Оставьте заявку — специалист расскажет об актуальных условиях.')
-contents['service'] = hero('Сервис складской техники','Диагностика, техническое обслуживание и ремонт погрузчиков и складского оборудования.',button('Записаться на сервис'),split=True)
-contents['service'] = contents['service'].replace(visual(), '<img class="inner-visual inner-visual--photo" src="assets/images/careers-team.png" width="1240" height="680" alt="Специалисты на территории склада" fetchpriority="high">')
-contents['service'] += section('Услуги',cards([('Диагностика','Поиск неисправностей и оценка технического состояния.'),('Техническое обслуживание','Регламентные работы для стабильной эксплуатации техники.'),('Ремонт','Устранение неисправностей узлов и систем.'),('Запчасти','Подбор необходимых комплектующих.')]))
+contents['service'] = photo_hero('Сервис складской техники','Диагностика, техническое обслуживание и ремонт погрузчиков и складского оборудования.','<a class="hero__cta btn1" href="#application"><span>Записаться на сервис</span></a>','assets/images/careers-team.png','Специалисты на территории склада')
+
+contents['service'] += section('Услуги',cards([('Диагностика','Поиск неисправностей и оценка технического состояния.'),('Техническое обслуживание','Регламентные работы для стабильной эксплуатации техники.'),('Ремонт','Устранение неисправностей узлов и систем.'),('Запчасти','Подбор необходимых комплектующих.')], icons=[f'assets/images/service-icon-{i}.svg' for i in range(1, 5)]))
 contents['service'] += form('Опишите проблему','Поможем определить следующий шаг',btn='Записаться на сервис',fields=[('phone','Телефон','tel',True),('equipment','Техника','text',False)],attachment='Прикрепить фото',message='Описание проблемы',accept='image/*')
-contents['payment'] = hero('Удобные способы оплаты','Подберём подходящий вариант расчёта в зависимости от техники и условий сделки.') + section('Варианты оплаты',cards([(x,'') for x in ['Безналичная оплата','Лизинг','Рассрочка','Оплата по счёту']]))
-contents['payment'] += section('Как проходит оплата',steps(['Выбираете технику','Получаете предложение','Согласовываем условия','Оплачиваете','Получаете технику'])) + form('Нужен счёт или коммерческое предложение?',btn='Запросить КП')
-contents['delivery'] = hero('Доставим технику до вашего объекта','Организуем доставку складской техники до согласованного адреса.',split=True)
-contents['delivery'] += section('Доставка техники без лишних сложностей','<div class="inner-split"><div>'+steps(['Вы выбираете технику','Сообщаете адрес','Рассчитываем доставку','Согласовываем дату','Техника отправляется к вам'])+'</div>'+visual()+'</div>')
+contents['payment'] = information_layout('Удобные способы оплаты','Подберём подходящий вариант расчёта в зависимости от техники и условий сделки.', [('Варианты оплаты',['Безналичная оплата','Лизинг','Рассрочка','Оплата по счёту']),('Как проходит оплата',['Выбираете технику','Получаете предложение','Согласовываем условия','Оплачиваете','Получаете технику'])]) + form('Остались вопросы?',btn='Запросить КП')
+contents['delivery'] = information_layout('Доставим технику до вашего объекта','Организуем доставку складской техники до согласованного адреса.', [('Доставка техники без лишних сложностей',['Вы выбираете технику','Сообщаете адрес','Рассчитываем доставку','Согласовываем дату','Техника отправляется к вам'])])
 contents['delivery'] += form('Рассчитать доставку',btn='Получить расчёт',fields=[('from','Откуда','text',False),('to','Куда','text',True),('equipment','Техника','text',False),('phone','Телефон','tel',True)],message=None)
 review_text = re.search(r'<blockquote class="reviews__text p1"[^>]*>(.*?)</blockquote>',home,re.S)
 if not review_text: review_text = re.search(r'class="reviews__text p1"[^>]*>(.*?)</',home,re.S)
 review_text = review_text.group(1)
 rating = '<div class="reviews__rating" aria-label="Оценка: 5 из 5">' + '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/images/star.svg#review-star"></use></svg>'*5 + '</div>'
 review_card = '<article class="reviews__card"><div class="reviews__meta"><div class="reviews__author-block"><h3>Вадим</h3><p class="p2">28.09.26</p></div>'+rating+'</div><div class="reviews__line" style="background:var(--color-accent)" aria-hidden="true"></div><blockquote class="reviews__text p1">'+review_text+'</blockquote></article>'
-contents['reviews'] = hero('Клиенты о нашей технике')
+contents['reviews'] = hero('Клиенты о нашей технике').replace('class="inner-hero"', 'class="inner-hero inner-hero--compact"')
 review_body = '<div class="inner-review-tabs" role="tablist" aria-label="Тип отзыва">'
 for i, (slug,title) in enumerate([('rent','Аренда'),('purchase','Покупка'),('service','Сервис'),('video','Видео')]):
     review_body += f'<button class="inner-review-tab btn3" id="review-tab-{slug}" role="tab" type="button" aria-selected="{str(i==0).lower()}" aria-controls="review-panel-{slug}" tabindex="{0 if i==0 else -1}">{title}</button>'

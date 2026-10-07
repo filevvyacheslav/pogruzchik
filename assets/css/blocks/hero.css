@@ -23,6 +23,7 @@
 .hero__description { max-width: 440px; white-space: pre-line; }
 .hero__cta { display: inline-flex; justify-content: center; align-items: center; height: 90px; padding-inline: 48px; border-radius: 6px; text-decoration: none; background: var(--color-accent); transition: background-color 150ms ease; }
 .hero__cta:hover { background: var(--color-accent-dark); }
+.hero__cta { color: var(--color-white); }
 .hero__cta span { text-box: trim-both cap alphabetic; }
 .hero__stats { display: flex; flex-direction: column; gap: 48px; align-items: flex-end; flex-shrink: 0; }
 .hero__stat { text-align: right; }
