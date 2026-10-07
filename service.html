@@ -8,16 +8,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css?v=4">
-<link rel="stylesheet" href="assets/css/blocks/header.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/footer.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/hero.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/application.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/services.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/videos.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/brands.css?v=11">
-<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=11">
+<link rel="stylesheet" href="assets/css/blocks/cookie.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/header.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/footer.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/hero.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/application.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/equipment-types.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/services.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/reviews.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/videos.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/brands.css?v=12">
+<link rel="stylesheet" href="assets/css/blocks/inner-pages.css?v=12">
+<script src="assets/js/cookie.js?v=1" defer>
+</script>
 <script src="assets/js/header.js?v=2" defer>
 </script>
 <script src="assets/js/application.js?v=3" defer>
@@ -231,9 +234,9 @@
 </div>
 <p class="p2" id="application-consent-text">
 <label for="application-consent">Я даю согласие на </label>
-<a href="index.html#personal-data-consent">обработку персональных данных</a>
+<a href="personal-data-consent.html">обработку персональных данных</a>
 <label for="application-consent"> и подтверждаю, что ознакомлен с </label>
-<a href="index.html#privacy-policy">Политикой в отношении обработки персональных данных</a>
+<a href="privacy-policy.html">Политикой в отношении обработки персональных данных</a>
 </p>
 </div>
 <button class="application__submit btn2" type="submit">
@@ -318,9 +321,19 @@
 
         <div class="site-footer__bottom p2">
 <p>2026 © ООО «Погрузчик»</p>
-<a href="index.html#privacy-policy">Политика обработки персональных данных</a>
+<div class="site-footer__legal-links">
+<a href="personal-data-consent.html">Согласие на обработку персональных данных</a>
+<a href="privacy-policy.html">Политика конфиденциальности</a>
+</div>
 </div>
       </div>
     </footer>
+<aside class="cookie-notice" aria-label="Использование файлов cookie" hidden>
+<p class="cookie-notice__text p2">Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с использованием файлов cookie. <a href="privacy-policy.html">Политика конфиденциальности</a>
+</p>
+<button class="cookie-notice__accept btn3" type="button">
+<span>Принять</span>
+</button>
+</aside>
 </body>
 </html>

@@ -32,11 +32,12 @@
     <link rel="stylesheet" href="assets/css/blocks/consultation.css?v=1">
     <link rel="stylesheet" href="assets/css/blocks/about.css?v=2">
     <script src="assets/js/about.js?v=1" defer></script>
-    <link rel="stylesheet" href="assets/css/blocks/footer.css?v=4">
+    <link rel="stylesheet" href="assets/css/blocks/footer.css?v=5">
     <script src="assets/js/header.js?v=2" defer></script>
     <script src="assets/js/hero.js?v=5" defer></script>
     <script src="assets/js/equipment-form.js?v=1" defer></script>
-  </head>
+  <link rel="stylesheet" href="assets/css/blocks/cookie.css?v=1"><script src="assets/js/cookie.js?v=1" defer></script>
+</head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <div class="header-placeholder">
@@ -384,7 +385,7 @@
             <label class="application__message-label"><span class="visually-hidden">Комментарий к заявке</span><textarea class="application__message p1" name="message" placeholder="Например, список необходимых работ или информация о поломке; код запчасти, а так же любой вопрос"></textarea></label>
             <div class="application__consent">
               <div class="application__checkbox-wrap"><input class="application__checkbox" id="application-consent" name="consent" type="checkbox" aria-labelledby="application-consent-text" required><svg class="application__check" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><use href="assets/images/check.svg#check"></use></svg></div>
-              <p class="p2" id="application-consent-text"><label for="application-consent">Я даю согласие на </label><a href="#personal-data-consent">обработку персональных данных</a><label for="application-consent"> и подтверждаю, что ознакомлен с </label><a href="#privacy-policy">Политикой в отношении обработки персональных данных</a></p>
+              <p class="p2" id="application-consent-text"><label for="application-consent">Я даю согласие на </label><a href="personal-data-consent.html">обработку персональных данных</a><label for="application-consent"> и подтверждаю, что ознакомлен с </label><a href="privacy-policy.html">Политикой в отношении обработки персональных данных</a></p>
             </div>
             <button class="application__submit btn2" type="submit"><span>Получить КП</span></button>
             <p class="application__status p2" role="status" hidden></p>
@@ -501,7 +502,7 @@
             <label class="application__message-label"><span class="visually-hidden">Комментарий к заявке</span><textarea class="application__message p1" name="message" placeholder="Например, список необходимых работ или информация о поломке; код запчасти, а так же любой вопрос"></textarea></label>
             <div class="application__consent">
               <div class="application__checkbox-wrap"><input class="application__checkbox" id="consultation-consent" name="consent" type="checkbox" aria-labelledby="consultation-consent-text" required><svg class="application__check" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><use href="assets/images/check.svg#check"></use></svg></div>
-              <p class="p2" id="consultation-consent-text"><label for="consultation-consent">Я даю согласие на </label><a href="#personal-data-consent">обработку персональных данных</a><label for="consultation-consent"> и подтверждаю, что ознакомлен с </label><a href="#privacy-policy">Политикой в отношении обработки персональных данных</a></p>
+              <p class="p2" id="consultation-consent-text"><label for="consultation-consent">Я даю согласие на </label><a href="personal-data-consent.html">обработку персональных данных</a><label for="consultation-consent"> и подтверждаю, что ознакомлен с </label><a href="privacy-policy.html">Политикой в отношении обработки персональных данных</a></p>
             </div>
             <button class="application__submit btn2" type="submit"><span>Получить КП</span></button>
             <p class="application__status p2" role="status" hidden></p>
@@ -550,9 +551,10 @@
           </div>
         </div>
 
-        <div class="site-footer__bottom p2"><p>2026 © ООО «Погрузчик»</p><a href="#privacy-policy">Политика обработки персональных данных</a></div>
+        <div class="site-footer__bottom p2"><p>2026 © ООО «Погрузчик»</p><div class="site-footer__legal-links"><a href="personal-data-consent.html">Согласие на обработку персональных данных</a><a href="privacy-policy.html">Политика конфиденциальности</a></div></div>
       </div>
     </footer>
 
-  </body>
+  <aside class="cookie-notice" aria-label="Использование файлов cookie" hidden><p class="cookie-notice__text p2">Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с использованием файлов cookie. <a href="privacy-policy.html">Политика конфиденциальности</a></p><button class="cookie-notice__accept btn3" type="button"><span>Принять</span></button></aside>
+</body>
 </html>

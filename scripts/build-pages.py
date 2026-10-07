@@ -6,13 +6,14 @@ Only the named inner HTML files are written. No publishing takes place.
 from pathlib import Path
 import re
 from html import escape as e
+from legal_content import LEGAL_CONTENT
 
 ROOT = Path(__file__).resolve().parent.parent
 home = (ROOT / 'index.html').read_text(encoding='utf-8')
 pages = [('about', 'О компании'), ('careers', 'Вакансии'),
          ('vacancy-sales', 'Менеджер по продажам'), ('buyout', 'Выкуп техники'),
          ('promotions', 'Акции'), ('service', 'Сервис'), ('payment', 'Оплата'),
-         ('delivery', 'Доставка'), ('reviews', 'Отзывы'), ('contacts', 'Контакты')]
+         ('delivery', 'Доставка'), ('reviews', 'Отзывы'), ('contacts', 'Контакты'), ('personal-data-consent', 'Согласие на обработку персональных данных'), ('privacy-policy', 'Политика обработки персональных данных')]
 def block(name):
     return re.search(r'<section class="[^"]*" id="' + name + r'".*?</section>', home, re.S).group()
 
@@ -27,11 +28,12 @@ header, footer = links(header), links(footer)
 footer = re.sub(r'<nav class="site-footer__pages.*?</nav>', '', footer, flags=re.S)
 socials = re.search(r'<div class="header-socials" aria-label="Мессенджеры">.*?</div>', home, re.S).group()
 contact = '<div class="application__contacts"><div class="application__contact-links"><a class="h3Aa" href="tel:+78006181647">+7 (800) 618-16-47</a><a class="p2" href="mailto:arenda_info@mail.ru">arenda_info@mail.ru</a></div>' + socials + '</div>'
-styles = ['header', 'footer', 'hero', 'application', 'equipment-types', 'services', 'reviews', 'videos', 'brands', 'inner-pages']
+cookie_notice = re.search(r'<aside class="cookie-notice".*?</aside>', home, re.S).group()
+styles = ['cookie', 'header', 'footer', 'hero', 'application', 'equipment-types', 'services', 'reviews', 'videos', 'brands', 'inner-pages']
 head = '''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=11">' for s in styles) + '''<script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=2" defer></script>'''
+<link rel="stylesheet" href="assets/css/base.css?v=4">''' + ''.join(f'<link rel="stylesheet" href="assets/css/blocks/{s}.css?v=12">' for s in styles) + '''<script src="assets/js/cookie.js?v=1" defer></script><script src="assets/js/header.js?v=2" defer></script><script src="assets/js/application.js?v=3" defer></script><script src="assets/js/inner-pages.js?v=2" defer></script>'''
 def button(text, href='#application'):
     return f'<a class="inner-button btn2" href="{href}"><span>{text}</span></a>'
 def visual(dark=False):
@@ -62,7 +64,7 @@ def field(name, label, kind='text', required=False):
     auto = {'name':'name', 'phone':'tel', 'email':'email'}.get(name, 'off')
     return f'<label class="application__field"><span class="visually-hidden">{label}</span><input class="application__input p1" name="{name}" type="{kind}" autocomplete="{auto}" placeholder="{label}"' + (' required' if required else '') + '>' + ('<span class="application__required p1" aria-hidden="true">*</span>' if required else '') + '</label>'
 def consent(key):
-    return f'''<div class="application__consent"><div class="application__checkbox-wrap"><input class="application__checkbox" id="{key}-consent" name="consent" type="checkbox" aria-labelledby="{key}-consent-text" required><svg class="application__check" viewBox="0 0 12 12" aria-hidden="true"><use href="assets/images/check.svg#check"></use></svg></div><p class="p2" id="{key}-consent-text"><label for="{key}-consent">Я даю согласие на </label><a href="index.html#personal-data-consent">обработку персональных данных</a><label for="{key}-consent"> и подтверждаю, что ознакомлен с </label><a href="index.html#privacy-policy">Политикой в отношении обработки персональных данных</a></p></div>'''
+    return f'''<div class="application__consent"><div class="application__checkbox-wrap"><input class="application__checkbox" id="{key}-consent" name="consent" type="checkbox" aria-labelledby="{key}-consent-text" required><svg class="application__check" viewBox="0 0 12 12" aria-hidden="true"><use href="assets/images/check.svg#check"></use></svg></div><p class="p2" id="{key}-consent-text"><label for="{key}-consent">Я даю согласие на </label><a href="personal-data-consent.html">обработку персональных данных</a><label for="{key}-consent"> и подтверждаю, что ознакомлен с </label><a href="privacy-policy.html">Политикой в отношении обработки персональных данных</a></p></div>'''
 def upload(key, label, multiple=False, accept=''):
     if multiple:
         return f'<label class="inner-form__file-label p2"><span class="visually-hidden">{label}, до 5 фотографий</span><input type="file" name="photos" accept="{accept}" multiple data-max-files="5" data-file-list="{key}-files"></label><ul class="inner-form__files p2" id="{key}-files" aria-live="polite"></ul><p class="inner-form__file-status p2" role="status" hidden></p>'
@@ -143,10 +145,15 @@ contents['contacts'] += section('К кому обратиться','<div class="
 dialog_form = re.search(r'<form class="application__form".*?</form>',form('Связаться',fields=[('name','Ваше имя','text',True),('phone','Телефон','tel',True)],key='contact-dialog'),re.S).group()
 dialog_form = dialog_form.replace('<div class="application__fields">','<input type="hidden" name="topic"><div class="application__fields">',1).replace('Получить КП','Отправить сообщение')
 contents['contacts'] += '<dialog class="inner-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title"><div class="inner-dialog__head"><h2 id="contact-dialog-title">Связаться</h2><button class="inner-dialog__close" type="button" aria-label="Закрыть окно"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>'+dialog_form+'</dialog>'
+for slug, title in [('personal-data-consent', 'Согласие на обработку персональных данных'), ('privacy-policy', 'Политика обработки персональных данных')]:
+    contents[slug] = '<section class="legal-document container"><h1>'+title+'</h1><p class="legal-document__draft p2">Черновик для согласования. Реквизиты оператора, сроки хранения и сведения об обработчиках необходимо заполнить перед публикацией.</p>'
+    for heading, text in LEGAL_CONTENT[slug]:
+        contents[slug] += '<section class="legal-document__section"><h2>'+heading+'</h2><p class="p1">'+text+'</p></section>'
+    contents[slug] += '<p class="p2">Правовая основа: <a href="https://mintrud.gov.ru/docs/laws/130" target="_blank" rel="noopener">Федеральный закон № 152-ФЗ «О персональных данных»</a>.</p></section>'
 for slug,title in pages:
     crumbs='<a href="index.html">Главная</a><span aria-hidden="true">/</span>'
     if slug == 'vacancy-sales': crumbs += '<a href="careers.html">Вакансии</a><span aria-hidden="true">/</span>'
     crumbs += f'<span aria-current="page">{title}</span>'
-    html = head + f'<title>{title} — Погрузчик</title><meta name="description" content="{e(title)}. Складская техника и услуги компании Погрузчик."></head><body class="inner-page"><a class="skip-link" href="#main">Перейти к содержимому</a>' + header + '<main id="main"><nav class="breadcrumbs container" aria-label="Хлебные крошки">'+crumbs+'</nav>'+contents[slug]+'</main>'+footer+'</body></html>'
+    html = head + f'<title>{title} — Погрузчик</title><meta name="description" content="{e(title)}. Складская техника и услуги компании Погрузчик."></head><body class="inner-page"><a class="skip-link" href="#main">Перейти к содержимому</a>' + header + '<main id="main"><nav class="breadcrumbs container" aria-label="Хлебные крошки">'+crumbs+'</nav>'+contents[slug]+'</main>'+footer+cookie_notice+'</body></html>'
     (ROOT/(slug+'.html')).write_text(html.replace('><', '>\n<')+'\n',encoding='utf-8')
     print(slug+'.html')

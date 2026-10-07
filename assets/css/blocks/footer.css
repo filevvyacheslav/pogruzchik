@@ -15,6 +15,7 @@
 .site-footer__contacts dd { margin: 0; font-weight: 700; }
 .site-footer__bottom { display: flex; justify-content: space-between; gap: 24px; margin-top: 48px; padding-top: 48px; border-top: 1px solid rgb(255 255 255 / 10%); }
 .site-footer__bottom p { color: rgb(255 255 255 / 40%); }
+.site-footer__legal-links { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 16px 24px; }
 @media (max-width: 1024px) {
   .site-footer__inner { padding-block: 48px; }
   .site-footer__columns { grid-template-columns: 1fr 2fr 0.8fr 1.3fr; gap: 16px; }
@@ -23,6 +24,7 @@
   .site-footer__bottom { margin-top: 32px; padding-top: 24px; }
 }
 @media (max-width: 767px) {
+  .site-footer__legal-links { flex-direction: column; align-items: center; }
   .site-footer__navigation-columns { grid-template-columns: minmax(0, 1fr); }
   .site-footer__columns { grid-template-columns: minmax(0, 1fr); gap: 48px; text-align: center; }
   .site-footer__brand, .site-footer__links { align-items: center; }
